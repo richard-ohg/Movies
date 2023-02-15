@@ -30,6 +30,8 @@
 		7900FD3C299D734800381D8C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD3B299D734800381D8C /* UIViewExtension.swift */; };
 		7900FD41299D761800381D8C /* AppLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD40299D761800381D8C /* AppLocalized.swift */; };
 		7900FD43299D762500381D8C /* ViewValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD42299D762500381D8C /* ViewValues.swift */; };
+		7900FD45299D799000381D8C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD44299D799000381D8C /* Images.swift */; };
+		7900FD48299D866900381D8C /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD47299D866900381D8C /* LoginTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		7900FD3B299D734800381D8C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		7900FD40299D761800381D8C /* AppLocalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalized.swift; sourceTree = "<group>"; };
 		7900FD42299D762500381D8C /* ViewValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewValues.swift; sourceTree = "<group>"; };
+		7900FD44299D799000381D8C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		7900FD47299D866900381D8C /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				7900FCE7299D390E00381D8C /* Assets.xcassets */,
+				7900FD44299D799000381D8C /* Images.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 		7900FD12299D403600381D8C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7900FD46299D862900381D8C /* Views */,
 				7900FD3F299D760300381D8C /* Localize */,
 				7900FD3E299D75F400381D8C /* Utils */,
 				7900FD3D299D75E700381D8C /* Constants */,
@@ -289,6 +295,14 @@
 			path = Localize;
 			sourceTree = "<group>";
 		};
+		7900FD46299D862900381D8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD47299D866900381D8C /* LoginTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -396,6 +410,7 @@
 				7900FD2E299D4E7700381D8C /* RequestManager.swift in Sources */,
 				7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */,
 				7900FD32299D619E00381D8C /* PopularMovieResponseEntity.swift in Sources */,
+				7900FD45299D799000381D8C /* Images.swift in Sources */,
 				7900FD3C299D734800381D8C /* UIViewExtension.swift in Sources */,
 				7900FD1A299D463B00381D8C /* LoginPresenter.swift in Sources */,
 				7900FD1E299D463B00381D8C /* LoginInteractor.swift in Sources */,
@@ -405,6 +420,7 @@
 				7900FD28299D4CD700381D8C /* ApiClientServiceProtocol.swift in Sources */,
 				7900FD37299D64A800381D8C /* Endpoint.swift in Sources */,
 				7900FD24299D4C5900381D8C /* ApiError.swift in Sources */,
+				7900FD48299D866900381D8C /* LoginTextField.swift in Sources */,
 				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,
 				7900FD21299D4C3400381D8C /* HttpResponseStatus.swift in Sources */,
 				7900FCE1299D390D00381D8C /* SceneDelegate.swift in Sources */,
