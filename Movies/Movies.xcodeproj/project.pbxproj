@@ -14,6 +14,11 @@
 		7900FCE8299D390E00381D8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7900FCE7299D390E00381D8C /* Assets.xcassets */; };
 		7900FCEB299D390E00381D8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7900FCE9299D390E00381D8C /* LaunchScreen.storyboard */; };
 		7900FCF6299D390F00381D8C /* MoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FCF5299D390F00381D8C /* MoviesTests.swift */; };
+		7900FD1A299D463B00381D8C /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD15299D463B00381D8C /* LoginPresenter.swift */; };
+		7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD16299D463B00381D8C /* LoginRouter.swift */; };
+		7900FD1C299D463B00381D8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD17299D463B00381D8C /* LoginViewController.swift */; };
+		7900FD1D299D463B00381D8C /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD18299D463B00381D8C /* LoginProtocols.swift */; };
+		7900FD1E299D463B00381D8C /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD19299D463B00381D8C /* LoginInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,11 @@
 		7900FCEC299D390E00381D8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7900FCF1299D390F00381D8C /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7900FCF5299D390F00381D8C /* MoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTests.swift; sourceTree = "<group>"; };
+		7900FD15299D463B00381D8C /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		7900FD16299D463B00381D8C /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		7900FD17299D463B00381D8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7900FD18299D463B00381D8C /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		7900FD19299D463B00381D8C /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				7900FD13299D413D00381D8C /* LaunchScreen */,
+				7900FD14299D44D300381D8C /* Login */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -143,6 +154,18 @@
 				7900FCE9299D390E00381D8C /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		7900FD14299D44D300381D8C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD18299D463B00381D8C /* LoginProtocols.swift */,
+				7900FD17299D463B00381D8C /* LoginViewController.swift */,
+				7900FD15299D463B00381D8C /* LoginPresenter.swift */,
+				7900FD19299D463B00381D8C /* LoginInteractor.swift */,
+				7900FD16299D463B00381D8C /* LoginRouter.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7900FD1C299D463B00381D8C /* LoginViewController.swift in Sources */,
+				7900FD1D299D463B00381D8C /* LoginProtocols.swift in Sources */,
+				7900FD1A299D463B00381D8C /* LoginPresenter.swift in Sources */,
 				7900FCE3299D390D00381D8C /* ViewController.swift in Sources */,
+				7900FD1E299D463B00381D8C /* LoginInteractor.swift in Sources */,
 				7900FCDF299D390D00381D8C /* AppDelegate.swift in Sources */,
+				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,
 				7900FCE1299D390D00381D8C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
