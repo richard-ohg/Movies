@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		7900FCDF299D390D00381D8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FCDE299D390D00381D8C /* AppDelegate.swift */; };
 		7900FCE1299D390D00381D8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FCE0299D390D00381D8C /* SceneDelegate.swift */; };
-		7900FCE3299D390D00381D8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FCE2299D390D00381D8C /* ViewController.swift */; };
-		7900FCE6299D390D00381D8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7900FCE4299D390D00381D8C /* Main.storyboard */; };
 		7900FCE8299D390E00381D8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7900FCE7299D390E00381D8C /* Assets.xcassets */; };
 		7900FCEB299D390E00381D8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7900FCE9299D390E00381D8C /* LaunchScreen.storyboard */; };
 		7900FCF6299D390F00381D8C /* MoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FCF5299D390F00381D8C /* MoviesTests.swift */; };
@@ -35,8 +33,6 @@
 		7900FCDB299D390D00381D8C /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7900FCDE299D390D00381D8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7900FCE0299D390D00381D8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7900FCE2299D390D00381D8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7900FCE5299D390D00381D8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7900FCE7299D390E00381D8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7900FCEA299D390E00381D8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7900FCEC299D390E00381D8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,8 +89,6 @@
 				7900FD11299D401A00381D8C /* Networking */,
 				7900FD12299D403600381D8C /* Common */,
 				7900FD10299D401000381D8C /* Modules */,
-				7900FCE2299D390D00381D8C /* ViewController.swift */,
-				7900FCE4299D390D00381D8C /* Main.storyboard */,
 				7900FCEC299D390E00381D8C /* Info.plist */,
 			);
 			path = Movies;
@@ -251,7 +245,6 @@
 			files = (
 				7900FCEB299D390E00381D8C /* LaunchScreen.storyboard in Resources */,
 				7900FCE8299D390E00381D8C /* Assets.xcassets in Resources */,
-				7900FCE6299D390D00381D8C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +265,6 @@
 				7900FD1C299D463B00381D8C /* LoginViewController.swift in Sources */,
 				7900FD1D299D463B00381D8C /* LoginProtocols.swift in Sources */,
 				7900FD1A299D463B00381D8C /* LoginPresenter.swift in Sources */,
-				7900FCE3299D390D00381D8C /* ViewController.swift in Sources */,
 				7900FD1E299D463B00381D8C /* LoginInteractor.swift in Sources */,
 				7900FCDF299D390D00381D8C /* AppDelegate.swift in Sources */,
 				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,
@@ -299,14 +291,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7900FCE4299D390D00381D8C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7900FCE5299D390D00381D8C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7900FCE9299D390E00381D8C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,7 +428,6 @@
 				INFOPLIST_FILE = Movies/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,7 +458,6 @@
 				INFOPLIST_FILE = Movies/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
