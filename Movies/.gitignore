@@ -19,6 +19,7 @@ Pods/
 
 ### macOS ###
 # General
+*/.DS_Store
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -182,9 +183,9 @@ xcuserdata
 /*.gcno
 
 ### Xcode Patch ###
-*.xcodeproj/*
+#*.xcodeproj/*
 #!*.xcodeproj/project.pbxproj
-#!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/
 #!*.xcworkspace/contents.xcworkspacedata
 #**/xcshareddata/WorkspaceSettings.xcsettings
 
