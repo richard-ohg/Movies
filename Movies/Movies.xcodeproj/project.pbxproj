@@ -17,6 +17,15 @@
 		7900FD1C299D463B00381D8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD17299D463B00381D8C /* LoginViewController.swift */; };
 		7900FD1D299D463B00381D8C /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD18299D463B00381D8C /* LoginProtocols.swift */; };
 		7900FD1E299D463B00381D8C /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD19299D463B00381D8C /* LoginInteractor.swift */; };
+		7900FD21299D4C3400381D8C /* HttpResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD20299D4C3400381D8C /* HttpResponseStatus.swift */; };
+		7900FD24299D4C5900381D8C /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD23299D4C5900381D8C /* ApiError.swift */; };
+		7900FD28299D4CD700381D8C /* ApiClientServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD27299D4CD700381D8C /* ApiClientServiceProtocol.swift */; };
+		7900FD2A299D4CEF00381D8C /* ApiClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD29299D4CEF00381D8C /* ApiClientService.swift */; };
+		7900FD2E299D4E7700381D8C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD2D299D4E7700381D8C /* RequestManager.swift */; };
+		7900FD30299D608C00381D8C /* PopularMovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD2F299D608C00381D8C /* PopularMovieEntity.swift */; };
+		7900FD32299D619E00381D8C /* PopularMovieResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD31299D619E00381D8C /* PopularMovieResponseEntity.swift */; };
+		7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD33299D620C00381D8C /* URLBuilder.swift */; };
+		7900FD37299D64A800381D8C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD36299D64A800381D8C /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +52,15 @@
 		7900FD17299D463B00381D8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7900FD18299D463B00381D8C /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		7900FD19299D463B00381D8C /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		7900FD20299D4C3400381D8C /* HttpResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseStatus.swift; sourceTree = "<group>"; };
+		7900FD23299D4C5900381D8C /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		7900FD27299D4CD700381D8C /* ApiClientServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientServiceProtocol.swift; sourceTree = "<group>"; };
+		7900FD29299D4CEF00381D8C /* ApiClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientService.swift; sourceTree = "<group>"; };
+		7900FD2D299D4E7700381D8C /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		7900FD2F299D608C00381D8C /* PopularMovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieEntity.swift; sourceTree = "<group>"; };
+		7900FD31299D619E00381D8C /* PopularMovieResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieResponseEntity.swift; sourceTree = "<group>"; };
+		7900FD33299D620C00381D8C /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		7900FD36299D64A800381D8C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +149,11 @@
 		7900FD11299D401A00381D8C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				7900FD35299D646900381D8C /* URLBuilder */,
+				7900FD1F299D4C2000381D8C /* StatusResponse */,
+				7900FD22299D4C4400381D8C /* Errors */,
+				7900FD25299D4CA000381D8C /* Protocols */,
+				7900FD26299D4CA900381D8C /* Implementations */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -138,6 +161,7 @@
 		7900FD12299D403600381D8C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7900FD2C299D4E6100381D8C /* RequestManager */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -158,8 +182,67 @@
 				7900FD15299D463B00381D8C /* LoginPresenter.swift */,
 				7900FD19299D463B00381D8C /* LoginInteractor.swift */,
 				7900FD16299D463B00381D8C /* LoginRouter.swift */,
+				7900FD2B299D4D8300381D8C /* Entities */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		7900FD1F299D4C2000381D8C /* StatusResponse */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD20299D4C3400381D8C /* HttpResponseStatus.swift */,
+			);
+			path = StatusResponse;
+			sourceTree = "<group>";
+		};
+		7900FD22299D4C4400381D8C /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD23299D4C5900381D8C /* ApiError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		7900FD25299D4CA000381D8C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD27299D4CD700381D8C /* ApiClientServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7900FD26299D4CA900381D8C /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD29299D4CEF00381D8C /* ApiClientService.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		7900FD2B299D4D8300381D8C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD2F299D608C00381D8C /* PopularMovieEntity.swift */,
+				7900FD31299D619E00381D8C /* PopularMovieResponseEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		7900FD2C299D4E6100381D8C /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD2D299D4E7700381D8C /* RequestManager.swift */,
+			);
+			path = RequestManager;
+			sourceTree = "<group>";
+		};
+		7900FD35299D646900381D8C /* URLBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD33299D620C00381D8C /* URLBuilder.swift */,
+				7900FD36299D64A800381D8C /* Endpoint.swift */,
+			);
+			path = URLBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,13 +345,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7900FD2A299D4CEF00381D8C /* ApiClientService.swift in Sources */,
 				7900FD1C299D463B00381D8C /* LoginViewController.swift in Sources */,
 				7900FD1D299D463B00381D8C /* LoginProtocols.swift in Sources */,
+				7900FD2E299D4E7700381D8C /* RequestManager.swift in Sources */,
+				7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */,
+				7900FD32299D619E00381D8C /* PopularMovieResponseEntity.swift in Sources */,
 				7900FD1A299D463B00381D8C /* LoginPresenter.swift in Sources */,
 				7900FD1E299D463B00381D8C /* LoginInteractor.swift in Sources */,
 				7900FCDF299D390D00381D8C /* AppDelegate.swift in Sources */,
+				7900FD28299D4CD700381D8C /* ApiClientServiceProtocol.swift in Sources */,
+				7900FD37299D64A800381D8C /* Endpoint.swift in Sources */,
+				7900FD24299D4C5900381D8C /* ApiError.swift in Sources */,
 				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,
+				7900FD21299D4C3400381D8C /* HttpResponseStatus.swift in Sources */,
 				7900FCE1299D390D00381D8C /* SceneDelegate.swift in Sources */,
+				7900FD30299D608C00381D8C /* PopularMovieEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
