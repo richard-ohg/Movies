@@ -26,6 +26,7 @@
 		7900FD32299D619E00381D8C /* PopularMovieResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD31299D619E00381D8C /* PopularMovieResponseEntity.swift */; };
 		7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD33299D620C00381D8C /* URLBuilder.swift */; };
 		7900FD37299D64A800381D8C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD36299D64A800381D8C /* Endpoint.swift */; };
+		7900FD3A299D6E0100381D8C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD39299D6E0100381D8C /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7900FD31299D619E00381D8C /* PopularMovieResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieResponseEntity.swift; sourceTree = "<group>"; };
 		7900FD33299D620C00381D8C /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		7900FD36299D64A800381D8C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		7900FD39299D6E0100381D8C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		7900FD12299D403600381D8C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7900FD38299D6DCE00381D8C /* Extensions */,
 				7900FD2C299D4E6100381D8C /* RequestManager */,
 			);
 			path = Common;
@@ -243,6 +246,14 @@
 				7900FD36299D64A800381D8C /* Endpoint.swift */,
 			);
 			path = URLBuilder;
+			sourceTree = "<group>";
+		};
+		7900FD38299D6DCE00381D8C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD39299D6E0100381D8C /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +364,7 @@
 				7900FD32299D619E00381D8C /* PopularMovieResponseEntity.swift in Sources */,
 				7900FD1A299D463B00381D8C /* LoginPresenter.swift in Sources */,
 				7900FD1E299D463B00381D8C /* LoginInteractor.swift in Sources */,
+				7900FD3A299D6E0100381D8C /* StringExtension.swift in Sources */,
 				7900FCDF299D390D00381D8C /* AppDelegate.swift in Sources */,
 				7900FD28299D4CD700381D8C /* ApiClientServiceProtocol.swift in Sources */,
 				7900FD37299D64A800381D8C /* Endpoint.swift in Sources */,
