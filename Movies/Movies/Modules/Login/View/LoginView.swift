@@ -144,7 +144,7 @@ final class LoginView: UIView {
                 let password = passwordTextField.text,
                 password.isNotEmpty
         else {
-            print("error") //TODO: show error
+            configLabel(text: AppLocalized.emptyFieldsErrorMessage)
             return
         }
         

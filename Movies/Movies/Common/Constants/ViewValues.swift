@@ -9,7 +9,7 @@ import Foundation
 
 struct ViewValues {
     static let iconLoginImageViewHeight: CGFloat = 150
-    static let iconLoginImageViewCenterYAnchor: CGFloat = -100
+    static let iconLoginImageViewCenterYAnchor: CGFloat = -200
     static let iconLoginImageViewCornerRadius: CGFloat = 10
     
     static let usernameTextFieldTopAnchor: CGFloat = 20

@@ -19,6 +19,6 @@ extension LoginViewController: Login_PresenterToViewProtocol {
     }
     
     func showErrorMessage() {
-        print("Error") // TODO: show error
+        loginView.configLabel(text: AppLocalized.invalidUserErrorMessage)
     }
 }

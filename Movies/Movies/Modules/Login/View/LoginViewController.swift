@@ -11,11 +11,15 @@ import UIKit
 class LoginViewController: UIViewController {
     
     var presenter: Login_ViewToPresenterProtocol?
+    
+    lazy var loginView = {
+        return LoginView(delegate: self)
+    }()
 
     // MARK: Lifecycle
     override func loadView() {
         super.loadView()
-        self.view = LoginView(delegate: self)
+        self.view = loginView
     }
     
     override func viewDidLoad() {
