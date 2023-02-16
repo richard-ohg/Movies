@@ -36,16 +36,15 @@ final class URLBuilderTests: XCTestCase {
     
     func testBuildWithQueryParams() {
         var builder = URLBuilder()
-        builder.config(path: .popularMovies(), queryParams: ["id" : 3])
+        builder.config(path: .popularMovies, queryParams: ["id" : 3])
         XCTAssertEqual(builder.getUrl(), URL(string: "https://api.themoviedb.org/3/movie/popular?id=3"))
     }
     
     func testBuildPostUrlRequest() {
         var builder = URLBuilder()
-        builder.config(path: .popularMovies())
+        builder.config(path: .popularMovies)
         builder.method = .POST
-        let url = builder.getUrlRequest()
-        XCTAssertEqual(builder.method, Method.POST)
+        XCTAssertEqual(builder.method.rawValue, "POST")
         XCTAssertEqual(builder.getUrl(), URL(string: "https://api.themoviedb.org/3/movie/popular"))
     }
 }
