@@ -1,16 +1,14 @@
 //
-//  LoginViewController.swift
+//  LoginView.swift
 //  Movies
 //
 //  Created by Ricardo Omar Hernández on 15/02/23.
-//  
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    
-// MARK: - Private Properties
+final class LoginView: UIView {
+
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: Images.loginBackgroundImage)
@@ -49,46 +47,51 @@ class LoginViewController: UIViewController {
         button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         return button
     }()
-
-    var presenter: Login_ViewToPresenterProtocol?
-
-    // MARK: Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configUI()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
     }
     
-    private func configUI() {
-        view.addSubview(backgroundImageView)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
+        addSubviews()
+        addConstraints()
+    }
+    
+    private func addSubviews() {
+        [backgroundImageView, iconLoginImageView, usernameTextField, passwordTextField, loginButton].forEach(addSubview)
+    }
+    
+    private func addConstraints() {
         backgroundImageView.fillSuperView()
         
-        view.addSubview(iconLoginImageView)
         iconLoginImageView.centerX()
         iconLoginImageView.centerY(withValue: ViewValues.iconLoginImageViewCenterYAnchor)
         
-        view.addSubview(usernameTextField)
         usernameTextField.setConstraints(
             top: iconLoginImageView.bottomAnchor,
-            trailing: view.trailingAnchor,
-            leading: view.leadingAnchor,
+            trailing: trailingAnchor,
+            leading: leadingAnchor,
             pTop: ViewValues.usernameTextFieldTopAnchor,
             pTrailing: ViewValues.loginTextFieldTrailingAndLeadingAnchor,
             pLeading: ViewValues.loginTextFieldTrailingAndLeadingAnchor)
         
-        view.addSubview(passwordTextField)
         passwordTextField.setConstraints(
             top: usernameTextField.bottomAnchor,
-            trailing: view.trailingAnchor,
-            leading: view.leadingAnchor,
+            trailing: trailingAnchor,
+            leading: leadingAnchor,
             pTop: ViewValues.passwordTextFieldTopAnchor,
             pTrailing: ViewValues.loginTextFieldTrailingAndLeadingAnchor,
             pLeading: ViewValues.loginTextFieldTrailingAndLeadingAnchor)
         
-        view.addSubview(loginButton)
         loginButton.setConstraints(
             top: passwordTextField.bottomAnchor,
-            trailing: view.trailingAnchor,
-            leading: view.leadingAnchor,
+            trailing: trailingAnchor,
+            leading: leadingAnchor,
             pTop: ViewValues.loginButtonTopAnchor,
             pTrailing: ViewValues.loginTextFieldTrailingAndLeadingAnchor,
             pLeading: ViewValues.loginTextFieldTrailingAndLeadingAnchor)
@@ -97,8 +100,4 @@ class LoginViewController: UIViewController {
     @objc func loginButtonPressed() {
        print("login")
     }
-}
-
-// MARK: - P R E S E N T E R · T O · V I E W
-extension LoginViewController: Login_PresenterToViewProtocol {
 }

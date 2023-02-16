@@ -34,6 +34,7 @@
 		7900FD48299D866900381D8C /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD47299D866900381D8C /* LoginTextField.swift */; };
 		7900FD4D299DB5F200381D8C /* ContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD4C299DB5F200381D8C /* ContentMode.swift */; };
 		7900FD4F299DB63F00381D8C /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD4E299DB63F00381D8C /* Method.swift */; };
+		7900FD52299DEB9900381D8C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD51299DEB9900381D8C /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		7900FD47299D866900381D8C /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		7900FD4C299DB5F200381D8C /* ContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMode.swift; sourceTree = "<group>"; };
 		7900FD4E299DB63F00381D8C /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		7900FD51299DEB9900381D8C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +201,8 @@
 		7900FD14299D44D300381D8C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				7900FD50299DEB6F00381D8C /* View */,
 				7900FD18299D463B00381D8C /* LoginProtocols.swift */,
-				7900FD17299D463B00381D8C /* LoginViewController.swift */,
 				7900FD15299D463B00381D8C /* LoginPresenter.swift */,
 				7900FD19299D463B00381D8C /* LoginInteractor.swift */,
 				7900FD16299D463B00381D8C /* LoginRouter.swift */,
@@ -307,6 +309,15 @@
 				7900FD47299D866900381D8C /* LoginTextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7900FD50299DEB6F00381D8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7900FD17299D463B00381D8C /* LoginViewController.swift */,
+				7900FD51299DEB9900381D8C /* LoginView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +433,7 @@
 				7900FD3C299D734800381D8C /* UIViewExtension.swift in Sources */,
 				7900FD1A299D463B00381D8C /* LoginPresenter.swift in Sources */,
 				7900FD1E299D463B00381D8C /* LoginInteractor.swift in Sources */,
+				7900FD52299DEB9900381D8C /* LoginView.swift in Sources */,
 				7900FD3A299D6E0100381D8C /* StringExtension.swift in Sources */,
 				7900FCDF299D390D00381D8C /* AppDelegate.swift in Sources */,
 				7900FD41299D761800381D8C /* AppLocalized.swift in Sources */,
