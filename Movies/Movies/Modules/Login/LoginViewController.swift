@@ -37,7 +37,17 @@ class LoginViewController: UIViewController {
     private let passwordTextField: LoginTextField = {
         let textField = LoginTextField()
         textField.placeholder = AppLocalized.passwordPlaceholder
+        textField.textContentType = .password
         return textField
+    }()
+    
+    private lazy var loginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle(AppLocalized.loginTitleButton, for: .normal)
+        button.backgroundColor = .lightGray
+        button.setHeightConstraint(with: ViewValues.loginButtonHeight)
+        button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+        return button
     }()
 
     var presenter: Login_ViewToPresenterProtocol?
@@ -73,6 +83,19 @@ class LoginViewController: UIViewController {
             pTop: ViewValues.passwordTextFieldTopAnchor,
             pTrailing: ViewValues.loginTextFieldTrailingAndLeadingAnchor,
             pLeading: ViewValues.loginTextFieldTrailingAndLeadingAnchor)
+        
+        view.addSubview(loginButton)
+        loginButton.setConstraints(
+            top: passwordTextField.bottomAnchor,
+            trailing: view.trailingAnchor,
+            leading: view.leadingAnchor,
+            pTop: ViewValues.loginButtonTopAnchor,
+            pTrailing: ViewValues.loginTextFieldTrailingAndLeadingAnchor,
+            pLeading: ViewValues.loginTextFieldTrailingAndLeadingAnchor)
+    }
+    
+    @objc func loginButtonPressed() {
+       print("login")
     }
 }
 

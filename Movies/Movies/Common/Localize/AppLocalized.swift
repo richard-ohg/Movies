@@ -10,4 +10,5 @@ import Foundation
 struct AppLocalized {
     static let usernamePlaceholder = "Username"
     static let passwordPlaceholder = "Password"
+    static let loginTitleButton = "Log in"
 }
