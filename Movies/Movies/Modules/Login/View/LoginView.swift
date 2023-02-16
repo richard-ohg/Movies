@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol LoginViewDelegate: AnyObject {
+    func buttonPressed()
+}
+
 final class LoginView: UIView {
+    
+    weak var delegate: LoginViewDelegate?
 
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -47,6 +53,12 @@ final class LoginView: UIView {
         button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         return button
     }()
+    
+    init(delegate: LoginViewDelegate) {
+        super.init(frame: .zero)
+        self.delegate = delegate
+        setup()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -98,6 +110,6 @@ final class LoginView: UIView {
     }
     
     @objc func loginButtonPressed() {
-       print("login")
+        delegate?.buttonPressed()
     }
 }

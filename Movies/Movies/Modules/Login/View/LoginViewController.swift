@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     // MARK: Lifecycle
     override func loadView() {
         super.loadView()
-        self.view = LoginView()
+        self.view = LoginView(delegate: self)
     }
     
     override func viewDidLoad() {
@@ -25,4 +25,10 @@ class LoginViewController: UIViewController {
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension LoginViewController: Login_PresenterToViewProtocol {
+}
+
+extension LoginViewController: LoginViewDelegate {
+    func buttonPressed() {
+        print("login")
+    }
 }
