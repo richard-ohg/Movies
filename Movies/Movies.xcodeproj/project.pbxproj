@@ -45,6 +45,11 @@
 		79DE75E7299EA1510069F1CC /* LoginViewController+Login_PresenterToViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75E6299EA1510069F1CC /* LoginViewController+Login_PresenterToViewProtocol.swift */; };
 		79DE75E9299EA4D20069F1CC /* ExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75E8299EA4D20069F1CC /* ExtensionsTest.swift */; };
 		79DE75EE299EA8AB0069F1CC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 79DE75ED299EA8AB0069F1CC /* FirebaseAuth */; };
+		79DE75F5299EBED20069F1CC /* MoviesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F0299EBED20069F1CC /* MoviesListPresenter.swift */; };
+		79DE75F6299EBED20069F1CC /* MoviesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F1299EBED20069F1CC /* MoviesListRouter.swift */; };
+		79DE75F7299EBED20069F1CC /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F2299EBED20069F1CC /* MoviesListViewController.swift */; };
+		79DE75F8299EBED20069F1CC /* MoviesListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F3299EBED20069F1CC /* MoviesListProtocols.swift */; };
+		79DE75F9299EBED20069F1CC /* MoviesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +102,11 @@
 		79DE75E4299EA12C0069F1CC /* LoginViewController+LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+LoginViewDelegate.swift"; sourceTree = "<group>"; };
 		79DE75E6299EA1510069F1CC /* LoginViewController+Login_PresenterToViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Login_PresenterToViewProtocol.swift"; sourceTree = "<group>"; };
 		79DE75E8299EA4D20069F1CC /* ExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTest.swift; sourceTree = "<group>"; };
+		79DE75F0299EBED20069F1CC /* MoviesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListPresenter.swift; sourceTree = "<group>"; };
+		79DE75F1299EBED20069F1CC /* MoviesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListRouter.swift; sourceTree = "<group>"; };
+		79DE75F2299EBED20069F1CC /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
+		79DE75F3299EBED20069F1CC /* MoviesListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListProtocols.swift; sourceTree = "<group>"; };
+		79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +194,7 @@
 			children = (
 				7900FD13299D413D00381D8C /* LaunchScreen */,
 				7900FD14299D44D300381D8C /* Login */,
+				79DE75EF299EBEA50069F1CC /* MoviesList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -372,6 +383,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		79DE75EF299EBEA50069F1CC /* MoviesList */ = {
+			isa = PBXGroup;
+			children = (
+				79DE75F3299EBED20069F1CC /* MoviesListProtocols.swift */,
+				79DE75F2299EBED20069F1CC /* MoviesListViewController.swift */,
+				79DE75F0299EBED20069F1CC /* MoviesListPresenter.swift */,
+				79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */,
+				79DE75F1299EBED20069F1CC /* MoviesListRouter.swift */,
+			);
+			path = MoviesList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,6 +512,8 @@
 				79DE75E2299EA0170069F1CC /* SpinnerDisplayable.swift in Sources */,
 				7900FD2E299D4E7700381D8C /* RequestManager.swift in Sources */,
 				7900FD4D299DB5F200381D8C /* ContentMode.swift in Sources */,
+				79DE75F9299EBED20069F1CC /* MoviesListInteractor.swift in Sources */,
+				79DE75F7299EBED20069F1CC /* MoviesListViewController.swift in Sources */,
 				7900FD59299DFDDF00381D8C /* AuthenticationFirebaseServiceProtocol.swift in Sources */,
 				7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */,
 				7900FD32299D619E00381D8C /* PopularMovieResponseEntity.swift in Sources */,
@@ -500,6 +525,8 @@
 				7900FD1E299D463B00381D8C /* LoginInteractor.swift in Sources */,
 				7900FD52299DEB9900381D8C /* LoginView.swift in Sources */,
 				7900FD3A299D6E0100381D8C /* StringExtension.swift in Sources */,
+				79DE75F6299EBED20069F1CC /* MoviesListRouter.swift in Sources */,
+				79DE75F8299EBED20069F1CC /* MoviesListProtocols.swift in Sources */,
 				7900FCDF299D390D00381D8C /* AppDelegate.swift in Sources */,
 				7900FD41299D761800381D8C /* AppLocalized.swift in Sources */,
 				7900FD5B299DFEA200381D8C /* AuthenticationFirebaseService.swift in Sources */,
@@ -509,6 +536,7 @@
 				7900FD37299D64A800381D8C /* Path.swift in Sources */,
 				7900FD24299D4C5900381D8C /* ApiError.swift in Sources */,
 				7900FD48299D866900381D8C /* LoginTextField.swift in Sources */,
+				79DE75F5299EBED20069F1CC /* MoviesListPresenter.swift in Sources */,
 				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,
 				7900FD21299D4C3400381D8C /* HttpResponseStatus.swift in Sources */,
 				7900FCE1299D390D00381D8C /* SceneDelegate.swift in Sources */,
