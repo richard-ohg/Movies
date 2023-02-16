@@ -11,10 +11,10 @@ import UIKit
 class MoviesListViewController: UIViewController {
     
     private lazy var segmentedControl: UISegmentedControl = {
-        let segControl = UISegmentedControl(items: ["Popular", "Top Rated", "On TV", "Airing Today"])
-        segControl.selectedSegmentIndex = 0
-        segControl.backgroundColor = UIColor.getColorWith(hex: "#192026")
-        segControl.selectedSegmentTintColor = UIColor.getColorWith(hex: "#636366")
+        let segControl = UISegmentedControl(items: ViewValues.itemsSegmentedControl)
+        segControl.selectedSegmentIndex = ViewValues.selectedSegmentIndexSegmentedControl
+        segControl.backgroundColor = Colors.backgroundColorSegmentedControl
+        segControl.selectedSegmentTintColor = Colors.selectedSegmentTintColorSegmentedControl
         segControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
         return segControl
     }()
@@ -24,15 +24,23 @@ class MoviesListViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.getColorWith(hex: "#0c151a")
         setupUI()
     }
     
     private func setupUI() {
+        view.backgroundColor = Colors.backgroundColorMoviesListView
+        
         setupSegmentedControl()
         setupNavigation()
+        
         view.add(subviews: segmentedControl)
-        segmentedControl.setConstraints(top: view.layoutMarginsGuide.topAnchor, trailing: view.trailingAnchor, leading: view.leadingAnchor, pTop: 20, pTrailing: 20, pLeading: 20)
+        segmentedControl.setConstraints(
+            top: view.layoutMarginsGuide.topAnchor,
+            trailing: view.trailingAnchor,
+            leading: view.leadingAnchor,
+            pTop: ViewValues.segmentedControlPadding,
+            pTrailing: ViewValues.segmentedControlPadding,
+            pLeading: ViewValues.segmentedControlPadding)
     }
     
     private func setupSegmentedControl() {
@@ -42,7 +50,7 @@ class MoviesListViewController: UIViewController {
     }
     
     private func setupNavigation() {
-        navigationController?.view.backgroundColor = UIColor.getColorWith(hex: "#30373a")
+        navigationController?.view.backgroundColor = Colors.navigationBackgroundViewColor
         setupNavigationBar()
         setupNavigationItems()
     }
@@ -51,16 +59,23 @@ class MoviesListViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = .white
         
-        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: Colors.navigationTitleColor,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: ViewValues.navigationTitleFontSize)
+        ]
         navigationController?.navigationBar.titleTextAttributes = attributes
     }
     
     func setupNavigationItems() {
-        navigationItem.title = "TV Shows"
+        navigationItem.title = AppLocalized.titleMoviesList
         
         let righButton = UIButton(type: .system)
-        righButton.setImage(UIImage(systemName: "line.3.horizontal.circle.fill"), for: .normal)
-        righButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        righButton.setImage(UIImage(systemName: Images.righButtonNavigationMovieList), for: .normal)
+        righButton.frame = CGRect(
+            x: ViewValues.righButtonFrameX,
+            y: ViewValues.righButtonFrameY,
+            width: ViewValues.righButtonFrameWidth,
+            height: ViewValues.righButtonFrameWidth)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: righButton)
     }
     

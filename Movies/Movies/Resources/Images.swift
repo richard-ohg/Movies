@@ -12,4 +12,5 @@ struct Images {
     static let showPasswordImageButton = "eye"
     static let hidePasswordImageButton = "eye.slash"
     
+    static let righButtonNavigationMovieList = "line.3.horizontal.circle.fill"
 }

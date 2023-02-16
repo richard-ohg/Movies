@@ -51,6 +51,7 @@
 		79DE75F8299EBED20069F1CC /* MoviesListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F3299EBED20069F1CC /* MoviesListProtocols.swift */; };
 		79DE75F9299EBED20069F1CC /* MoviesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */; };
 		79DE75FB299EC5600069F1CC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75FA299EC5600069F1CC /* UIColorExtension.swift */; };
+		79DE75FD299ED43F0069F1CC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75FC299ED43F0069F1CC /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		79DE75F3299EBED20069F1CC /* MoviesListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListProtocols.swift; sourceTree = "<group>"; };
 		79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListInteractor.swift; sourceTree = "<group>"; };
 		79DE75FA299EC5600069F1CC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		79DE75FC299ED43F0069F1CC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				7900FD42299D762500381D8C /* ViewValues.swift */,
+				79DE75FC299ED43F0069F1CC /* Colors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				7900FD5E299E005400381D8C /* User.swift in Sources */,
 				7900FD37299D64A800381D8C /* Path.swift in Sources */,
 				7900FD24299D4C5900381D8C /* ApiError.swift in Sources */,
+				79DE75FD299ED43F0069F1CC /* Colors.swift in Sources */,
 				7900FD48299D866900381D8C /* LoginTextField.swift in Sources */,
 				79DE75F5299EBED20069F1CC /* MoviesListPresenter.swift in Sources */,
 				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,

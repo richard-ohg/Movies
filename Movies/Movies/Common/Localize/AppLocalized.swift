@@ -14,4 +14,11 @@ struct AppLocalized {
     
     static let emptyFieldsErrorMessage = "The username or password field is empty."
     static let invalidUserErrorMessage = "Invalid username and/or password. You did not provide a valid login."
+    
+    static let firstItemSegmentedControl = "Popular"
+    static let secondItemSegmentedControl = "Top Rated"
+    static let thirdItemSegmentedControl = "On TV"
+    static let fourthItemSegmentedControl = "Airing"
+    
+    static let titleMoviesList = "TV Shows"
 }
