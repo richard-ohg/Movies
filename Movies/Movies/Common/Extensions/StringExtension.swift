@@ -11,6 +11,10 @@ extension String {
     static var empty: String {
         return String()
     }
+    
+    var notIsEmpty: Bool {
+        !self.isEmpty
+    }
 }
 
 extension String? {
