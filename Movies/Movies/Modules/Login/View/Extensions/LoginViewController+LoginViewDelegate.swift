@@ -8,8 +8,8 @@
 import Foundation
 
 extension LoginViewController: LoginViewDelegate {
-    func buttonPressed() {
-        print("login")
+    func buttonPressed(email: String, password: String) {
+        presenter?.login(email: email, password: password)
     }
 }
 

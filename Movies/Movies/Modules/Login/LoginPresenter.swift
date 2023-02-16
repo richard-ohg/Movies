@@ -14,9 +14,22 @@ class LoginPresenter: Login_ViewToPresenterProtocol {
     var interactor: Login_PresenterToInteractorProtocol?
     var router: Login_PresenterToRouterProtocol?
     
+    func login(email: String, password: String) {
+        view?.showLoader()
+        interactor?.login(email: email, password: password)
+    }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
 extension LoginPresenter: Login_InteractorToPresenterProtocol {
-
+    
+    func loginSuccess() {
+        view?.hideLoader()
+        router?.goToMoviesList()
+    }
+    
+    func loginError() {
+        view?.hideLoader()
+        view?.showErrorMessage()
+    }
 }

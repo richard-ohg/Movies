@@ -28,5 +28,7 @@ class LoginRouter {
 }
 
 extension LoginRouter: Login_PresenterToRouterProtocol {
-    
+    func goToMoviesList() {
+        print("goToMoviesList")
+    }
 }
