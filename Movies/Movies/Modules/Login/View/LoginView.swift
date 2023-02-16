@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginViewDelegate: AnyObject {
-    func buttonPressed()
+    func buttonPressed(email: String, password: String)
 }
 
 final class LoginView: UIView {
@@ -75,7 +75,12 @@ final class LoginView: UIView {
     }
     
     private func addSubviews() {
-        [backgroundImageView, iconLoginImageView, usernameTextField, passwordTextField, loginButton].forEach(addSubview)
+        add(subviews:
+            backgroundImageView,
+            iconLoginImageView,
+            usernameTextField,
+            passwordTextField,
+            loginButton)
     }
     
     private func addConstraints() {
@@ -110,6 +115,15 @@ final class LoginView: UIView {
     }
     
     @objc func loginButtonPressed() {
-        delegate?.buttonPressed()
+        guard let email = usernameTextField.text,
+                email.isNotEmpty,
+                let password = passwordTextField.text,
+                password.isNotEmpty
+        else {
+            print("error") //TODO: show error
+            return
+        }
+        
+        delegate?.buttonPressed(email: email, password: password)
     }
 }
