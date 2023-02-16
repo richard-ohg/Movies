@@ -23,12 +23,4 @@ class LoginViewController: UIViewController {
     }
 }
 
-// MARK: - P R E S E N T E R · T O · V I E W
-extension LoginViewController: Login_PresenterToViewProtocol {
-}
-
-extension LoginViewController: LoginViewDelegate {
-    func buttonPressed() {
-        print("login")
-    }
-}
+extension LoginViewController: SpinnerDisplayable {}

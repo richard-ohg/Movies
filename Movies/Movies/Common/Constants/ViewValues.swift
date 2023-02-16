@@ -24,4 +24,7 @@ struct ViewValues {
     static let loginTextFieldCornerRadius: CGFloat = 10
     
     static let loginButtonHeight: CGFloat = 50
+    
+    static let tagIdentifierSpinner = 123
+    static let opacityContainerSpinner = 0.3
 }
