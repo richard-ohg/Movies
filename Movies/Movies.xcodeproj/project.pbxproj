@@ -11,7 +11,7 @@
 		7900FCE1299D390D00381D8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FCE0299D390D00381D8C /* SceneDelegate.swift */; };
 		7900FCE8299D390E00381D8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7900FCE7299D390E00381D8C /* Assets.xcassets */; };
 		7900FCEB299D390E00381D8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7900FCE9299D390E00381D8C /* LaunchScreen.storyboard */; };
-		7900FCF6299D390F00381D8C /* MoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FCF5299D390F00381D8C /* MoviesTests.swift */; };
+		7900FCF6299D390F00381D8C /* URLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FCF5299D390F00381D8C /* URLBuilderTests.swift */; };
 		7900FD1A299D463B00381D8C /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD15299D463B00381D8C /* LoginPresenter.swift */; };
 		7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD16299D463B00381D8C /* LoginRouter.swift */; };
 		7900FD1C299D463B00381D8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD17299D463B00381D8C /* LoginViewController.swift */; };
@@ -25,13 +25,15 @@
 		7900FD30299D608C00381D8C /* PopularMovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD2F299D608C00381D8C /* PopularMovieEntity.swift */; };
 		7900FD32299D619E00381D8C /* PopularMovieResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD31299D619E00381D8C /* PopularMovieResponseEntity.swift */; };
 		7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD33299D620C00381D8C /* URLBuilder.swift */; };
-		7900FD37299D64A800381D8C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD36299D64A800381D8C /* Endpoint.swift */; };
+		7900FD37299D64A800381D8C /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD36299D64A800381D8C /* Path.swift */; };
 		7900FD3A299D6E0100381D8C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD39299D6E0100381D8C /* StringExtension.swift */; };
 		7900FD3C299D734800381D8C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD3B299D734800381D8C /* UIViewExtension.swift */; };
 		7900FD41299D761800381D8C /* AppLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD40299D761800381D8C /* AppLocalized.swift */; };
 		7900FD43299D762500381D8C /* ViewValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD42299D762500381D8C /* ViewValues.swift */; };
 		7900FD45299D799000381D8C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD44299D799000381D8C /* Images.swift */; };
 		7900FD48299D866900381D8C /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD47299D866900381D8C /* LoginTextField.swift */; };
+		7900FD4D299DB5F200381D8C /* ContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD4C299DB5F200381D8C /* ContentMode.swift */; };
+		7900FD4F299DB63F00381D8C /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900FD4E299DB63F00381D8C /* Method.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +54,7 @@
 		7900FCEA299D390E00381D8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7900FCEC299D390E00381D8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7900FCF1299D390F00381D8C /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7900FCF5299D390F00381D8C /* MoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTests.swift; sourceTree = "<group>"; };
+		7900FCF5299D390F00381D8C /* URLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderTests.swift; sourceTree = "<group>"; };
 		7900FD15299D463B00381D8C /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		7900FD16299D463B00381D8C /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		7900FD17299D463B00381D8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -66,13 +68,15 @@
 		7900FD2F299D608C00381D8C /* PopularMovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieEntity.swift; sourceTree = "<group>"; };
 		7900FD31299D619E00381D8C /* PopularMovieResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieResponseEntity.swift; sourceTree = "<group>"; };
 		7900FD33299D620C00381D8C /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
-		7900FD36299D64A800381D8C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		7900FD36299D64A800381D8C /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		7900FD39299D6E0100381D8C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7900FD3B299D734800381D8C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		7900FD40299D761800381D8C /* AppLocalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalized.swift; sourceTree = "<group>"; };
 		7900FD42299D762500381D8C /* ViewValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewValues.swift; sourceTree = "<group>"; };
 		7900FD44299D799000381D8C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		7900FD47299D866900381D8C /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		7900FD4C299DB5F200381D8C /* ContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMode.swift; sourceTree = "<group>"; };
+		7900FD4E299DB63F00381D8C /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +131,7 @@
 		7900FCF4299D390F00381D8C /* MoviesTests */ = {
 			isa = PBXGroup;
 			children = (
-				7900FCF5299D390F00381D8C /* MoviesTests.swift */,
+				7900FCF5299D390F00381D8C /* URLBuilderTests.swift */,
 			);
 			path = MoviesTests;
 			sourceTree = "<group>";
@@ -258,7 +262,9 @@
 			isa = PBXGroup;
 			children = (
 				7900FD33299D620C00381D8C /* URLBuilder.swift */,
-				7900FD36299D64A800381D8C /* Endpoint.swift */,
+				7900FD4C299DB5F200381D8C /* ContentMode.swift */,
+				7900FD36299D64A800381D8C /* Path.swift */,
+				7900FD4E299DB63F00381D8C /* Method.swift */,
 			);
 			path = URLBuilder;
 			sourceTree = "<group>";
@@ -408,8 +414,10 @@
 				7900FD43299D762500381D8C /* ViewValues.swift in Sources */,
 				7900FD1D299D463B00381D8C /* LoginProtocols.swift in Sources */,
 				7900FD2E299D4E7700381D8C /* RequestManager.swift in Sources */,
+				7900FD4D299DB5F200381D8C /* ContentMode.swift in Sources */,
 				7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */,
 				7900FD32299D619E00381D8C /* PopularMovieResponseEntity.swift in Sources */,
+				7900FD4F299DB63F00381D8C /* Method.swift in Sources */,
 				7900FD45299D799000381D8C /* Images.swift in Sources */,
 				7900FD3C299D734800381D8C /* UIViewExtension.swift in Sources */,
 				7900FD1A299D463B00381D8C /* LoginPresenter.swift in Sources */,
@@ -418,7 +426,7 @@
 				7900FCDF299D390D00381D8C /* AppDelegate.swift in Sources */,
 				7900FD41299D761800381D8C /* AppLocalized.swift in Sources */,
 				7900FD28299D4CD700381D8C /* ApiClientServiceProtocol.swift in Sources */,
-				7900FD37299D64A800381D8C /* Endpoint.swift in Sources */,
+				7900FD37299D64A800381D8C /* Path.swift in Sources */,
 				7900FD24299D4C5900381D8C /* ApiError.swift in Sources */,
 				7900FD48299D866900381D8C /* LoginTextField.swift in Sources */,
 				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,
@@ -432,7 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7900FCF6299D390F00381D8C /* MoviesTests.swift in Sources */,
+				7900FCF6299D390F00381D8C /* URLBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
