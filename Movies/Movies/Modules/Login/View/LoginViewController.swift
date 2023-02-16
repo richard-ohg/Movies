@@ -13,9 +13,13 @@ class LoginViewController: UIViewController {
     var presenter: Login_ViewToPresenterProtocol?
 
     // MARK: Lifecycle
+    override func loadView() {
+        super.loadView()
+        self.view = LoginView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = LoginView()
     }
 }
 
