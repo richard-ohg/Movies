@@ -27,4 +27,6 @@ struct ViewValues {
     
     static let tagIdentifierSpinner = 123
     static let opacityContainerSpinner = 0.3
+    
+    static let paddingPasswordButton: CGFloat = 10
 }

@@ -28,27 +28,30 @@ class LoginTextField: UITextField {
     
     func enablePasswordToggle() {
         var configuration = UIButton.Configuration.borderless()
-        configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        configuration.contentInsets = NSDirectionalEdgeInsets(
+            top: ViewValues.paddingPasswordButton,
+            leading: ViewValues.paddingPasswordButton,
+            bottom: ViewValues.paddingPasswordButton,
+            trailing: ViewValues.paddingPasswordButton)
         let button = UIButton(type: .custom)
         button.backgroundColor = .clear
         button.configuration = configuration
         setPasswordToggleImage(button)
-        button.addTarget(self, action: #selector(self.togglePasswordView), for: .touchUpInside)
+        button.addTarget(
+            self,
+            action: #selector(self.togglePasswordView),
+            for: .touchUpInside)
         self.rightView = button
         self.rightViewMode = .always
     }
     
     private func setPasswordToggleImage(_ button: UIButton) {
-        if(isSecureTextEntry){
-            button.setImage(UIImage(systemName: "eye"), for: .normal)
-        }else{
-            button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-
-        }
+        let imageName = isSecureTextEntry ? Images.showPasswordImageButton : Images.hidePasswordImageButton
+        button.setImage(UIImage(systemName: imageName), for: .normal)
     }
     
-    @objc func togglePasswordView(_ sender: Any) {
+    @objc func togglePasswordView(_ sender: UIButton) {
         self.isSecureTextEntry = !self.isSecureTextEntry
-        setPasswordToggleImage(sender as! UIButton)
+        setPasswordToggleImage(sender)
     }
 }

@@ -8,4 +8,8 @@
 struct Images {
     static let loginBackgroundImage = "wallpaper"
     static let loginIcon = "iconMovieDB"
+    
+    static let showPasswordImageButton = "eye"
+    static let hidePasswordImageButton = "eye.slash"
+    
 }
