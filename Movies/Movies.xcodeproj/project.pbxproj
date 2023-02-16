@@ -43,6 +43,8 @@
 		79DE75E2299EA0170069F1CC /* SpinnerDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75E1299EA0170069F1CC /* SpinnerDisplayable.swift */; };
 		79DE75E5299EA12C0069F1CC /* LoginViewController+LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75E4299EA12C0069F1CC /* LoginViewController+LoginViewDelegate.swift */; };
 		79DE75E7299EA1510069F1CC /* LoginViewController+Login_PresenterToViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75E6299EA1510069F1CC /* LoginViewController+Login_PresenterToViewProtocol.swift */; };
+		79DE75E9299EA4D20069F1CC /* ExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75E8299EA4D20069F1CC /* ExtensionsTest.swift */; };
+		79DE75EE299EA8AB0069F1CC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 79DE75ED299EA8AB0069F1CC /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,7 @@
 		79DE75E1299EA0170069F1CC /* SpinnerDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerDisplayable.swift; sourceTree = "<group>"; };
 		79DE75E4299EA12C0069F1CC /* LoginViewController+LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+LoginViewDelegate.swift"; sourceTree = "<group>"; };
 		79DE75E6299EA1510069F1CC /* LoginViewController+Login_PresenterToViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Login_PresenterToViewProtocol.swift"; sourceTree = "<group>"; };
+		79DE75E8299EA4D20069F1CC /* ExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79DE75EE299EA8AB0069F1CC /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +125,7 @@
 				7900FCDD299D390D00381D8C /* Movies */,
 				7900FCF4299D390F00381D8C /* MoviesTests */,
 				7900FCDC299D390D00381D8C /* Products */,
+				79DE75EA299EA6600069F1CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				7900FCF5299D390F00381D8C /* URLBuilderTests.swift */,
+				79DE75E8299EA4D20069F1CC /* ExtensionsTest.swift */,
 			);
 			path = MoviesTests;
 			sourceTree = "<group>";
@@ -359,6 +365,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		79DE75EA299EA6600069F1CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -396,6 +409,9 @@
 				7900FCF3299D390F00381D8C /* PBXTargetDependency */,
 			);
 			name = MoviesTests;
+			packageProductDependencies = (
+				79DE75ED299EA8AB0069F1CC /* FirebaseAuth */,
+			);
 			productName = MoviesTests;
 			productReference = 7900FCF1299D390F00381D8C /* MoviesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -505,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7900FCF6299D390F00381D8C /* URLBuilderTests.swift in Sources */,
+				79DE75E9299EA4D20069F1CC /* ExtensionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,6 +812,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		7900FD54299DF32800381D8C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7900FD53299DF32700381D8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		79DE75ED299EA8AB0069F1CC /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7900FD53299DF32700381D8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;

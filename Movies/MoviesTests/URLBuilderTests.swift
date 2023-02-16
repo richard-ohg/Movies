@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import FirebaseAuth
 @testable import Movies
 
 final class URLBuilderTests: XCTestCase {
