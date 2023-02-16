@@ -50,6 +50,7 @@
 		79DE75F7299EBED20069F1CC /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F2299EBED20069F1CC /* MoviesListViewController.swift */; };
 		79DE75F8299EBED20069F1CC /* MoviesListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F3299EBED20069F1CC /* MoviesListProtocols.swift */; };
 		79DE75F9299EBED20069F1CC /* MoviesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */; };
+		79DE75FB299EC5600069F1CC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75FA299EC5600069F1CC /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		79DE75F2299EBED20069F1CC /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
 		79DE75F3299EBED20069F1CC /* MoviesListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListProtocols.swift; sourceTree = "<group>"; };
 		79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListInteractor.swift; sourceTree = "<group>"; };
+		79DE75FA299EC5600069F1CC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 			children = (
 				7900FD39299D6E0100381D8C /* StringExtension.swift */,
 				7900FD3B299D734800381D8C /* UIViewExtension.swift */,
+				79DE75FA299EC5600069F1CC /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				7900FD2E299D4E7700381D8C /* RequestManager.swift in Sources */,
 				7900FD4D299DB5F200381D8C /* ContentMode.swift in Sources */,
 				79DE75F9299EBED20069F1CC /* MoviesListInteractor.swift in Sources */,
+				79DE75FB299EC5600069F1CC /* UIColorExtension.swift in Sources */,
 				79DE75F7299EBED20069F1CC /* MoviesListViewController.swift in Sources */,
 				7900FD59299DFDDF00381D8C /* AuthenticationFirebaseServiceProtocol.swift in Sources */,
 				7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */,
