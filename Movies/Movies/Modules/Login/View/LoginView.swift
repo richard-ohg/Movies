@@ -35,6 +35,7 @@ final class LoginView: UIView {
     private let usernameTextField: LoginTextField = {
         let textField = LoginTextField()
         textField.placeholder = AppLocalized.usernamePlaceholder
+        textField.keyboardType = .emailAddress
         return textField
     }()
     
@@ -42,6 +43,8 @@ final class LoginView: UIView {
         let textField = LoginTextField()
         textField.placeholder = AppLocalized.passwordPlaceholder
         textField.textContentType = .password
+        textField.isSecureTextEntry = true
+        textField.enablePasswordToggle()
         return textField
     }()
     
