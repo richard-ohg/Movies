@@ -8,6 +8,12 @@
 import UIKit
 
 extension UIView {
+    func add(subviews: UIView...) {
+        for subview in subviews {
+            self.addSubview(subview)
+        }
+    }
+    
     func setConstraints(
         top: NSLayoutYAxisAnchor? = nil,
         trailing: NSLayoutXAxisAnchor? = nil,

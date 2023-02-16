@@ -12,7 +12,7 @@ extension String {
         return String()
     }
     
-    var notIsEmpty: Bool {
+    var isNotEmpty: Bool {
         !self.isEmpty
     }
 }
@@ -20,5 +20,9 @@ extension String {
 extension String? {
     var orEmpty: String {
         self ?? ""
+    }
+    
+    var isNilOrEmpty: Bool {
+        self == nil || self == ""
     }
 }
