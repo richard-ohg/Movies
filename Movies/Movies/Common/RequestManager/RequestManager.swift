@@ -8,10 +8,21 @@
 import Foundation
 
 class RequestManager {
-    private let apiClient: ApiClientService = ApiClientService()
+    private let apiClient: ApiClientServiceProtocol
+    private let authFirebaseClient: AuthenticationFirebaseServiceProtocol
     static let shared: RequestManager = RequestManager()
     
-    private init() {}
+    private init(
+        apiClient: ApiClientServiceProtocol = ApiClientService(),
+        authFirebaseClient: AuthenticationFirebaseServiceProtocol = AuthenticationFirebaseService())
+    {
+        self.apiClient = apiClient
+        self.authFirebaseClient = authFirebaseClient
+    }
+    
+    func login(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
+        authFirebaseClient.login(email: email, password: password, completion: completion)
+    }
     
     func fetchPopularMovies(withPage page: Int = 1) async -> Result<PopularMovieResponseEntity, Error> {
         do {
