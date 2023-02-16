@@ -20,15 +20,26 @@ struct ApiClientService: ApiClientServiceProtocol {
         return try await makeRequest(url: url)
     }
     
+    func request<T: Decodable>(url: URLRequest?, type: T.Type) async throws -> T {
+        guard let url = url else { throw ApiError.errorInUrl }
+        return try await makeRequest(url: url)
+    }
+    
     private func makeRequest<T: Decodable>(url: URL) async throws -> T {
         let request = try await session.data(from: url)
+        return try validateResponse(request: request)
+    }
+    
+    private func makeRequest<T: Decodable>(url: URLRequest) async throws -> T {
+        let request = try await session.data(for: url)
         return try validateResponse(request: request)
     }
     
     private func validateResponse<T:Decodable>(
         request: (data: Data, httpResponse: URLResponse)
     ) throws -> T {
-        guard let httpResponse = request.httpResponse as? HTTPURLResponse else { throw ApiError.unknownError }
+        guard let httpResponse = request.httpResponse as? HTTPURLResponse
+        else { throw ApiError.unknownError }
         
         switch httpResponse.statusCode {
         case HttpResponseStatus.ok:
