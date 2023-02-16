@@ -10,7 +10,7 @@ import Foundation
 enum Path {
     case custom(String)
     case empty
-    case popularMovies(Int? = nil)
+    case popularMovies
     
     func getString() -> String {
         switch self {

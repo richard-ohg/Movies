@@ -13,12 +13,12 @@ class RequestManager {
     
     private init() {}
     
-    func fetchPopularMovies(withPage page: Int? = nil) async -> Result<PopularMovieResponseEntity, Error> {
+    func fetchPopularMovies(withPage page: Int = 1) async -> Result<PopularMovieResponseEntity, Error> {
         do {
-            let urlString = URLBuilder.get(endpoint: .popularMovies(page))
-            let url = URL(string: urlString)
-            let repositoryResult = try await apiClient.request(url: url, type: PopularMovieResponseEntity.self)
-            return .success(repositoryResult)
+            var builder = URLBuilder()
+            builder.config(path: .popularMovies, queryParams: ["page" : page])
+            let apiClientResult = try await apiClient.request(url: builder.getUrl(), type: PopularMovieResponseEntity.self)
+            return .success(apiClientResult)
         } catch {
             return .failure(error)
         }
