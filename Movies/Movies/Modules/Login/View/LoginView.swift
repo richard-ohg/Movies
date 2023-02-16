@@ -57,6 +57,14 @@ final class LoginView: UIView {
         return button
     }()
     
+    private let showErrorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = .red
+        label.numberOfLines = 0
+        return label
+    }()
+    
     init(delegate: LoginViewDelegate) {
         super.init(frame: .zero)
         self.delegate = delegate
@@ -83,7 +91,8 @@ final class LoginView: UIView {
             iconLoginImageView,
             usernameTextField,
             passwordTextField,
-            loginButton)
+            loginButton,
+            showErrorMessageLabel)
     }
     
     private func addConstraints() {
@@ -115,6 +124,18 @@ final class LoginView: UIView {
             pTop: ViewValues.loginButtonTopAnchor,
             pTrailing: ViewValues.loginTextFieldTrailingAndLeadingAnchor,
             pLeading: ViewValues.loginTextFieldTrailingAndLeadingAnchor)
+        
+        showErrorMessageLabel.setConstraints(
+            top: loginButton.bottomAnchor,
+            trailing: trailingAnchor,
+            leading: leadingAnchor,
+            pTop: ViewValues.errorMessageLabelTopAnchor,
+            pTrailing: ViewValues.errorMessageLabelTrailingAndLeadingAnchor,
+            pLeading: ViewValues.errorMessageLabelTrailingAndLeadingAnchor)
+    }
+    
+    func configLabel(text: String) {
+        showErrorMessageLabel.text = text
     }
     
     @objc func loginButtonPressed() {

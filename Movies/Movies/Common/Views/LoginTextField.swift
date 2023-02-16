@@ -33,6 +33,7 @@ class LoginTextField: UITextField {
             leading: ViewValues.paddingPasswordButton,
             bottom: ViewValues.paddingPasswordButton,
             trailing: ViewValues.paddingPasswordButton)
+        configuration.baseForegroundColor = .black
         let button = UIButton(type: .custom)
         button.backgroundColor = .clear
         button.configuration = configuration

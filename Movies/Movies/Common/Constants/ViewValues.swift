@@ -18,6 +18,9 @@ struct ViewValues {
     
     static let loginButtonTopAnchor: CGFloat = 10
     
+    static let errorMessageLabelTopAnchor: CGFloat = 10
+    static let errorMessageLabelTrailingAndLeadingAnchor: CGFloat = 25
+    
     static let loginTextFieldTrailingAndLeadingAnchor: CGFloat = 50
     static let loginTextFieldFontSize: CGFloat = 20
     static let loginTextFieldHeight: CGFloat = 50
