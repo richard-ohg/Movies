@@ -27,6 +27,7 @@ extension LoginPresenter: Login_InteractorToPresenterProtocol {
         DispatchQueue.main.async {
             self.view?.hideSpinner()
         }
+        view?.clearView()
         router?.goToMoviesList()
     }
     

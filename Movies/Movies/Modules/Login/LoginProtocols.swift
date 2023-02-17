@@ -35,6 +35,7 @@ protocol Login_PresenterToViewProtocol: SpinnerDisplayable, AnyObject {
     var presenter: Login_ViewToPresenterProtocol? { get set }
 
     func showErrorMessage()
+    func clearView()
 }
 
 // MARK: PRESENTER -> ROUTER

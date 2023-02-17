@@ -138,6 +138,12 @@ final class LoginView: UIView {
         showErrorMessageLabel.text = text
     }
     
+    func clearView() {
+        usernameTextField.text = ""
+        passwordTextField.text = ""
+        showErrorMessageLabel.text = ""
+    }
+    
     @objc func loginButtonPressed() {
         guard let email = usernameTextField.text,
                 email.isNotEmpty,
