@@ -19,6 +19,7 @@ protocol MoviesList_ViewToPresenterProtocol: AnyObject {
     func viewDidLoad()
     func getItem(indexPath: IndexPath) -> PopularMovieViewModel
     func logout()
+    func showProfile()
 }
 
 // MARK: PRESENTER -> INTERACTOR
@@ -48,4 +49,5 @@ protocol MoviesList_PresenterToViewProtocol: SpinnerDisplayable, AnyObject {
 // MARK: PRESENTER -> ROUTER
 protocol MoviesList_PresenterToRouterProtocol: AnyObject {
     func goToLogin()
+    func goToProfile()
 }

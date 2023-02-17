@@ -29,7 +29,7 @@ class MoviesListViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = Colors.backgroundColorMoviesListView
+        view.backgroundColor = Colors.backgroundDefaultColor
         setupNavigation()
     }
     
@@ -90,7 +90,7 @@ class MoviesListViewController: UIViewController {
     }
     
     private func viewProfileSelected() {
-        print("viewProfileSelected")
+        presenter?.showProfile()
     }
     
     private func logoutSelected() {

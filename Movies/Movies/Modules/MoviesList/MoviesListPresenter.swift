@@ -34,6 +34,10 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
         view?.showSpinner()
         interactor?.logout()
     }
+    
+    func showProfile() {
+        router?.goToProfile()
+    }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
