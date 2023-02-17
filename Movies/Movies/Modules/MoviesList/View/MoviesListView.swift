@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol MoviesListViewDelegate: AnyObject {
-    
-}
+protocol MoviesListViewDelegate: AnyObject {}
 
 final class MoviesListView: UIView {
     
@@ -47,6 +45,7 @@ final class MoviesListView: UIView {
     }
     
     private func setup() {
+        backgroundColor = Colors.backgroundDefaultColor
         addSubviews()
         addConstraints()
         setupSegmentedControl()

@@ -29,7 +29,6 @@ class MoviesListViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = Colors.backgroundDefaultColor
         setupNavigation()
     }
     
