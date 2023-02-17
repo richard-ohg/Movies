@@ -11,6 +11,7 @@ enum Path {
     case custom(String)
     case empty
     case popularMovies
+    case movieDetail(Int)
     
     func getString() -> String {
         switch self {
@@ -20,6 +21,8 @@ enum Path {
             return "/3"
         case .popularMovies:
             return "/3/movie/popular"
+        case .movieDetail(let movieId):
+            return "/3/movie/\(movieId)"
         }
     }
 }

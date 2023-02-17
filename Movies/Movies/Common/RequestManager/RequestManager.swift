@@ -42,4 +42,15 @@ class RequestManager {
             return .failure(error)
         }
     }
+    
+    func fetchMovieDetail(with id: Int) async -> Result<MovieDetailResponseEntity, Error> {
+        do {
+            var builder = URLBuilder()
+            builder.config(path: .movieDetail(id))
+            let apiClientResult = try await apiClient.request(url: builder.getUrl(), type: MovieDetailResponseEntity.self)
+            return .success(apiClientResult)
+        } catch {
+            return .failure(error)
+        }
+    }
 }
