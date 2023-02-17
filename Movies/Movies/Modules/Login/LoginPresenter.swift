@@ -15,7 +15,7 @@ class LoginPresenter: Login_ViewToPresenterProtocol {
     var router: Login_PresenterToRouterProtocol?
     
     func login(email: String, password: String) {
-        view?.showLoader()
+        view?.showSpinner()
         interactor?.login(email: email, password: password)
     }
 }
@@ -24,12 +24,12 @@ class LoginPresenter: Login_ViewToPresenterProtocol {
 extension LoginPresenter: Login_InteractorToPresenterProtocol {
     
     func loginSuccess() {
-        view?.hideLoader()
+        view?.hideSpinner()
         router?.goToMoviesList()
     }
     
     func loginError() {
-        view?.hideLoader()
+        view?.hideSpinner()
         view?.showErrorMessage()
     }
 }

@@ -31,11 +31,9 @@ protocol Login_InteractorToPresenterProtocol: AnyObject {
 }
 
 // MARK: PRESENTER -> VIEW
-protocol Login_PresenterToViewProtocol: AnyObject {
+protocol Login_PresenterToViewProtocol: SpinnerDisplayable, AnyObject {
     var presenter: Login_ViewToPresenterProtocol? { get set }
-    
-    func showLoader()
-    func hideLoader()
+
     func showErrorMessage()
 }
 
