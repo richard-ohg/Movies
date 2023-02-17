@@ -17,7 +17,6 @@ extension MoviesListViewController: MoviesList_PresenterToViewProtocol {
     }
     
     func showErrorMessage(error: Error) {
-        print(error.localizedDescription)
-//        TODO: missing implementation
+        presentSimpleAlert(title: AppLocalized.errorTitle, message: error.localizedDescription)
     }
 }

@@ -30,4 +30,6 @@ struct AppLocalized {
     static let profileActionTitle = "View Profile"
     static let logoutActionTitle = "Log out"
     static let cancelActionTitle = "Cancel"
+    
+    static let errorTitle = "Error"
 }
