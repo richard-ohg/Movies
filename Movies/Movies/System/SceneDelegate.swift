@@ -17,7 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let navigation = UINavigationController()
-        let mainView = LoginRouter.createModule()
+        var mainView = LoginRouter.createModule()
+        if RequestManager.shared.fetchProfile() != nil {
+            mainView = MoviesListRouter.createModule()
+        }
         navigation.viewControllers = [mainView]
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()

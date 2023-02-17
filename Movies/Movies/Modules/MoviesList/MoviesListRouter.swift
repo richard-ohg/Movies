@@ -32,7 +32,12 @@ class MoviesListRouter {
 
 extension MoviesListRouter: MoviesList_PresenterToRouterProtocol {
     func goToLogin() {
-        view?.navigationController?.popViewController(animated: true)
+        let vc = view?.navigationController?.popViewController(animated: true)
+        if vc == nil {
+            let loginVC = LoginRouter.createModule()
+            view?.navigationController?.viewControllers.insert(loginVC, at: 0)
+            view?.navigationController?.popViewController(animated: true)
+        }
     }
     
     func goToProfile() {
