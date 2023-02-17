@@ -65,8 +65,20 @@ class MoviesListViewController: UIViewController {
     }
     
     @objc func showMenu() {
-        let profileAction = UIAlertAction(title: AppLocalized.profileActionTitle, style: .default)
-        let logoutAction = UIAlertAction(title: AppLocalized.logoutActionTitle, style: .destructive)
+        let profileAction = UIAlertAction(
+            title: AppLocalized.profileActionTitle,
+            style: .default
+        ) { [weak self] _ in
+            self?.viewProfileSelected()
+        }
+        
+        let logoutAction = UIAlertAction(
+            title: AppLocalized.logoutActionTitle,
+            style: .destructive
+        ) { [weak self] _ in
+            self?.logoutSelected()
+        }
+        
         let cancelAction = UIAlertAction(title: AppLocalized.cancelActionTitle, style: .cancel)
         
         presentCustomAlert(
@@ -74,6 +86,14 @@ class MoviesListViewController: UIViewController {
             message: AppLocalized.menuAlertMessage,
             customActions: [profileAction, logoutAction, cancelAction],
             style: .actionSheet)
+    }
+    
+    private func viewProfileSelected() {
+        print("viewProfileSelected")
+    }
+    
+    private func logoutSelected() {
+        presenter?.logout()
     }
 }
 

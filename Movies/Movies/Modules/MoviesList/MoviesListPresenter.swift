@@ -30,6 +30,10 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
         interactor?.fetchPopularMovies()
     }
     
+    func logout() {
+        view?.showSpinner()
+        interactor?.logout()
+    }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
@@ -44,5 +48,10 @@ extension MoviesListPresenter: MoviesList_InteractorToPresenterProtocol {
     func showError(error: Error) {
         view?.hideSpinner()
         view?.showErrorMessage(error: error)
+    }
+    
+    func successLogout() {
+        view?.hideSpinner()
+        router?.goToLogin()
     }
 }

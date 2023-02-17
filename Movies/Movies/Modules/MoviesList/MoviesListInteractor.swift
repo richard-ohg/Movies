@@ -22,4 +22,13 @@ class MoviesListInteractor: MoviesList_PresenterToInteractorProtocol {
             }
         }
     }
+    
+    func logout() {
+        do {
+            try RequestManager.shared.logout()
+            presenter?.successLogout()
+        } catch  {
+            presenter?.showError(error: error)
+        }
+    }
 }

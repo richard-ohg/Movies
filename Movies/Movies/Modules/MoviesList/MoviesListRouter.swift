@@ -28,5 +28,8 @@ class MoviesListRouter {
 }
 
 extension MoviesListRouter: MoviesList_PresenterToRouterProtocol {
-    
+    func goToLogin() {
+//        TODO: missing implementation
+        print("goToLogin")
+    }
 }
