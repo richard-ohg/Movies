@@ -10,6 +10,9 @@ import Foundation
 
 class ProfileInteractor: Profile_PresenterToInteractorProtocol {
     weak var presenter: Profile_InteractorToPresenterProtocol?
-
+    
+    func fetchProfile() {
+        guard let user = RequestManager.shared.fetchProfile() else { return }
+        presenter?.setProfile(user: user)
+    }
 }
-

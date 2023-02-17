@@ -14,9 +14,15 @@ class ProfilePresenter: Profile_ViewToPresenterProtocol {
     var interactor: Profile_PresenterToInteractorProtocol?
     var router: Profile_PresenterToRouterProtocol?
     
+    func viewDidLoad() {
+        interactor?.fetchProfile()
+    }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
 extension ProfilePresenter: Profile_InteractorToPresenterProtocol {
-
+    
+    func setProfile(user: User) {
+        view?.setProfile(user: user)
+    }
 }

@@ -24,11 +24,16 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
     }
 }
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension ProfileViewController: Profile_PresenterToViewProtocol {
+    
+    func setProfile(user: User) {
+        profileView.update(user: user)
+    }
 }
 
 extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

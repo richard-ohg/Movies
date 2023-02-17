@@ -107,4 +107,8 @@ final class ProfileView: UIView {
     func reload() {
         collectionView.reloadData()
     }
+    
+    func update(user: User) {
+        emailLabel.text = user.email
+    }
 }

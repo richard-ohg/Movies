@@ -28,6 +28,10 @@ class RequestManager {
         try authFirebaseClient.logout()
     }
     
+    func fetchProfile() -> User? {
+        authFirebaseClient.getCurrentUser()
+    }
+    
     func fetchPopularMovies(withPage page: Int = 1) async -> Result<PopularMovieResponseEntity, Error> {
         do {
             var builder = URLBuilder()
