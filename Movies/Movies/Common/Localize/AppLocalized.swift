@@ -33,6 +33,7 @@ struct AppLocalized {
     
     static let errorTitle = "Error"
     static let headerSectionTitle = "Favorite Shows"
+    static let headerMovieDetailSectionTitle = "Production Companies"
     
     static let profileTitleLabel = "Profile"
 }

@@ -94,6 +94,14 @@ final class MovieDetailView: UIView {
         return label
     }()
     
+    private let collectionTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = Colors.defaultLabel
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.text = AppLocalized.headerMovieDetailSectionTitle
+        return label
+    }()
+    
     lazy var productionCompaniesCollectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: self.makeLayout())
         collection.delegate = delegate
@@ -135,6 +143,7 @@ final class MovieDetailView: UIView {
             dateLabel,
             scoreMovieLabel,
             votesCountLabel,
+            collectionTitleLabel,
             productionCompaniesCollectionView)
     }
     
@@ -197,32 +206,29 @@ final class MovieDetailView: UIView {
             pLeading: 20)
         votesCountLabel.centerYAnchor.constraint(equalTo: scoreMovieLabel.centerYAnchor).isActive = true
         
-        productionCompaniesCollectionView.setConstraints(
+        collectionTitleLabel.setConstraints(
             top: movieImageView.bottomAnchor,
+            leading: leadingAnchor,
+            pTop: 30,
+            pLeading: 20)
+        
+        productionCompaniesCollectionView.setConstraints(
+            top: collectionTitleLabel.bottomAnchor,
             trailing: trailingAnchor,
             bottom: bottomAnchor,
             leading: leadingAnchor,
-            pTop: 30,
             pTrailing: 10,
             pBottom: 20,
             pLeading: 10)
-        
-        
     }
     
     private func makeLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         let itemWidth = ViewValues.widthScreen
-        layout.itemSize = CGSize(width: itemWidth, height: ViewValues.movieItemHeight)
+        layout.itemSize = CGSize(width: itemWidth, height: 300)
         layout.minimumLineSpacing = .zero
         layout.minimumInteritemSpacing = .zero
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(
-            top: .zero,
-            left: ViewValues.normalCollectionPadding,
-            bottom: .zero,
-            right: ViewValues.normalCollectionPadding
-        )
         return layout
     }
     
