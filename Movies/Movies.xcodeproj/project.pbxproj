@@ -52,6 +52,8 @@
 		79DE75F9299EBED20069F1CC /* MoviesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */; };
 		79DE75FB299EC5600069F1CC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75FA299EC5600069F1CC /* UIColorExtension.swift */; };
 		79DE75FD299ED43F0069F1CC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE75FC299ED43F0069F1CC /* Colors.swift */; };
+		79DE7603299EDD820069F1CC /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7602299EDD820069F1CC /* Reusable.swift */; };
+		79DE7605299EDDCA0069F1CC /* ItemMoviesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7604299EDDCA0069F1CC /* ItemMoviesListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListInteractor.swift; sourceTree = "<group>"; };
 		79DE75FA299EC5600069F1CC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		79DE75FC299ED43F0069F1CC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		79DE7602299EDD820069F1CC /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		79DE7604299EDDCA0069F1CC /* ItemMoviesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMoviesListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,8 +353,8 @@
 		7900FD46299D862900381D8C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				79DE7601299EDD700069F1CC /* Protocols */,
 				7900FD47299D866900381D8C /* LoginTextField.swift */,
-				79DE75E1299EA0170069F1CC /* SpinnerDisplayable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -392,13 +396,47 @@
 		79DE75EF299EBEA50069F1CC /* MoviesList */ = {
 			isa = PBXGroup;
 			children = (
+				79DE75FE299ED7E00069F1CC /* View */,
 				79DE75F3299EBED20069F1CC /* MoviesListProtocols.swift */,
-				79DE75F2299EBED20069F1CC /* MoviesListViewController.swift */,
 				79DE75F0299EBED20069F1CC /* MoviesListPresenter.swift */,
 				79DE75F4299EBED20069F1CC /* MoviesListInteractor.swift */,
 				79DE75F1299EBED20069F1CC /* MoviesListRouter.swift */,
 			);
 			path = MoviesList;
+			sourceTree = "<group>";
+		};
+		79DE75FE299ED7E00069F1CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79DE7600299ED7F80069F1CC /* Extensions */,
+				79DE75FF299ED7E60069F1CC /* Cell */,
+				79DE75F2299EBED20069F1CC /* MoviesListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79DE75FF299ED7E60069F1CC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79DE7604299EDDCA0069F1CC /* ItemMoviesListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		79DE7600299ED7F80069F1CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		79DE7601299EDD700069F1CC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				79DE75E1299EA0170069F1CC /* SpinnerDisplayable.swift */,
+				79DE7602299EDD820069F1CC /* Reusable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,6 +555,7 @@
 				7900FD1D299D463B00381D8C /* LoginProtocols.swift in Sources */,
 				79DE75E2299EA0170069F1CC /* SpinnerDisplayable.swift in Sources */,
 				7900FD2E299D4E7700381D8C /* RequestManager.swift in Sources */,
+				79DE7603299EDD820069F1CC /* Reusable.swift in Sources */,
 				7900FD4D299DB5F200381D8C /* ContentMode.swift in Sources */,
 				79DE75F9299EBED20069F1CC /* MoviesListInteractor.swift in Sources */,
 				79DE75FB299EC5600069F1CC /* UIColorExtension.swift in Sources */,
@@ -543,6 +582,7 @@
 				7900FD37299D64A800381D8C /* Path.swift in Sources */,
 				7900FD24299D4C5900381D8C /* ApiError.swift in Sources */,
 				79DE75FD299ED43F0069F1CC /* Colors.swift in Sources */,
+				79DE7605299EDDCA0069F1CC /* ItemMoviesListCell.swift in Sources */,
 				7900FD48299D866900381D8C /* LoginTextField.swift in Sources */,
 				79DE75F5299EBED20069F1CC /* MoviesListPresenter.swift in Sources */,
 				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,

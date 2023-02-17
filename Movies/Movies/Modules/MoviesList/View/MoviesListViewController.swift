@@ -18,6 +18,15 @@ class MoviesListViewController: UIViewController {
         segControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
         return segControl
     }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: makeLayout())
+        collection.register(ItemMoviesListCell.self, forCellWithReuseIdentifier: ItemMoviesListCell.reuseIdentifier)
+        collection.backgroundColor = .clear
+        collection.delegate = self
+        collection.dataSource = self
+        return collection
+    }()
 
     var presenter: MoviesList_ViewToPresenterProtocol?
 
@@ -33,7 +42,7 @@ class MoviesListViewController: UIViewController {
         setupSegmentedControl()
         setupNavigation()
         
-        view.add(subviews: segmentedControl)
+        view.add(subviews: segmentedControl, collectionView)
         segmentedControl.setConstraints(
             top: view.layoutMarginsGuide.topAnchor,
             trailing: view.trailingAnchor,
@@ -41,6 +50,13 @@ class MoviesListViewController: UIViewController {
             pTop: ViewValues.segmentedControlPadding,
             pTrailing: ViewValues.segmentedControlPadding,
             pLeading: ViewValues.segmentedControlPadding)
+        
+        collectionView.setConstraints(
+            top: segmentedControl.bottomAnchor,
+            trailing: view.trailingAnchor,
+            bottom: view.bottomAnchor,
+            leading: view.leadingAnchor,
+            pTop: ViewValues.collectionViewTopAnchor)
     }
     
     private func setupSegmentedControl() {
@@ -55,7 +71,7 @@ class MoviesListViewController: UIViewController {
         setupNavigationItems()
     }
     
-    func setupNavigationBar() {
+    private func setupNavigationBar() {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = .white
         
@@ -66,7 +82,7 @@ class MoviesListViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = attributes
     }
     
-    func setupNavigationItems() {
+    private func setupNavigationItems() {
         navigationItem.title = AppLocalized.titleMoviesList
         
         let righButton = UIButton(type: .system)
@@ -79,6 +95,22 @@ class MoviesListViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: righButton)
     }
     
+    private func makeLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        let layoutWidth = (ViewValues.widthScreen - ViewValues.doublePadding) / ViewValues.multiplierTwo
+        let layoutHeight = (ViewValues.widthScreen - ViewValues.doublePadding) / ViewValues.multiplierTwo
+        layout.itemSize = CGSize(width: layoutWidth, height: layoutHeight)
+        layout.minimumLineSpacing = .zero
+        layout.minimumInteritemSpacing = .zero
+        layout.sectionInset = UIEdgeInsets(
+            top: .zero,
+            left: ViewValues.normalPadding,
+            bottom: .zero,
+            right: ViewValues.normalPadding
+        )
+        return layout
+    }
+    
     @objc func segmentedValueChanged(_ sender:UISegmentedControl) {
         print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
     }
@@ -86,4 +118,25 @@ class MoviesListViewController: UIViewController {
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension MoviesListViewController: MoviesList_PresenterToViewProtocol {
+}
+
+extension MoviesListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ItemMoviesListCell.reuseIdentifier,
+            for: indexPath) as? ItemMoviesListCell
+        else {
+            return UICollectionViewCell()
+        }
+        cell.configData()
+        return cell
+    }
+}
+
+extension MoviesListViewController: UICollectionViewDelegate {
+    
 }

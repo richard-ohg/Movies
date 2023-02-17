@@ -5,7 +5,7 @@
 //  Created by Ricardo Omar Hernández on 15/02/23.
 //
 
-import Foundation
+import UIKit
 
 struct ViewValues {
     static let iconLoginImageViewHeight: CGFloat = 150
@@ -48,4 +48,11 @@ struct ViewValues {
     static let righButtonFrameX: CGFloat = 0
     static let righButtonFrameY: CGFloat = 0
     static let righButtonFrameWidth: CGFloat = 34
+    
+    static let widthScreen = UIScreen.main.bounds.width
+    static let doublePadding: CGFloat = 20
+    static let normalPadding: CGFloat = 10
+    static let multiplierTwo: CGFloat = 2
+    
+    static let collectionViewTopAnchor: CGFloat = 10
 }
