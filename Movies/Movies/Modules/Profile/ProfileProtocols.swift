@@ -22,6 +22,7 @@ protocol Profile_PresenterToInteractorProtocol: AnyObject {
     var presenter: Profile_InteractorToPresenterProtocol? { get set }
     
     func fetchProfile()
+    func fetchFavoriteMovies()
 }
 
 // MARK: INTERACTOR -> PRESENTER

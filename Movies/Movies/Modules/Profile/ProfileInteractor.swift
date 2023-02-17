@@ -15,4 +15,8 @@ class ProfileInteractor: Profile_PresenterToInteractorProtocol {
         guard let user = RequestManager.shared.fetchProfile() else { return }
         presenter?.setProfile(user: user)
     }
+    
+    func fetchFavoriteMovies() {
+//      TODO: missing implementation
+    }
 }
