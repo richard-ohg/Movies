@@ -24,7 +24,9 @@ extension MessageDisplayable where Self: UIViewController {
         
         let okAction = UIAlertAction(title: actionTitle, style: .default)
         alertController.addAction(okAction)
-        self.present(alertController, animated: true)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true)
+        }
     }
     
     func presentDoubleAlert(
@@ -44,7 +46,9 @@ extension MessageDisplayable where Self: UIViewController {
         let okAction = UIAlertAction(title: secondActionTitle, style: .cancel, handler: secondActionHandler)
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
-        self.present(alertController, animated: true)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true)
+        }
     }
     
     func presentCustomAlert(
@@ -59,6 +63,8 @@ extension MessageDisplayable where Self: UIViewController {
             preferredStyle: style)
         
         customActions.forEach(alertController.addAction(_:))
-        self.present(alertController, animated: true)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true)
+        }
     }
 }
