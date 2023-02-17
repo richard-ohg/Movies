@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ItemMovieDetailCell: UICollectionViewCell {
 
@@ -13,15 +14,13 @@ final class ItemMovieDetailCell: UICollectionViewCell {
     private let mainContainer: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGroupedBackground
-        view.layer.cornerRadius = ViewValues.containerCornerRadius
-        view.layer.masksToBounds = true
+        view.setCornerRadius(withValue: ViewValues.containerCornerRadius)
         return view
     }()
     
     private let categoryMenuImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: Images.placeholderMovieImage)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -72,9 +71,12 @@ final class ItemMovieDetailCell: UICollectionViewCell {
         mainContainer.layer.addSublayer(gradientMaskLayer)
     }
     
-    func configData() {
-        titleCategoryLabel.text = "titulo"
-        categoryMenuImageView.image = UIImage(named: Images.placeholderMovieImage)
+    func configData(itemData: ProductionCompany) {
+        titleCategoryLabel.text = itemData.name
+        categoryMenuImageView.kf.setImage(
+            with: itemData.imageUrl,
+            placeholder: UIImage(named: Images.placeholderMovieImage)
+        )
     }
 }
 
