@@ -54,6 +54,17 @@ class RequestManager {
         }
     }
     
+    func fetchMoviesOnTV(withPage page: Int = 1) async -> Result<GenericMovieResponseEntity<OnTVMoviesEntity>, Error> {
+        do {
+            var builder = URLBuilder()
+            builder.config(path: .onTV, queryParams: ["page" : page])
+            let apiClientResult = try await apiClient.request(url: builder.getUrl(), type: GenericMovieResponseEntity<OnTVMoviesEntity>.self)
+            return .success(apiClientResult)
+        } catch {
+            return .failure(error)
+        }
+    }
+    
     func fetchMovieDetail(with id: Int) async -> Result<MovieDetailResponseEntity, Error> {
         do {
             var builder = URLBuilder()

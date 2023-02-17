@@ -91,6 +91,7 @@
 		79E5EF3329A021E500C6157B /* MovieProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3229A021E500C6157B /* MovieProtocol.swift */; };
 		79E5EF3529A0261E00C6157B /* MoviesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3429A0261E00C6157B /* MoviesContainer.swift */; };
 		79E5EF3729A0277800C6157B /* SegmentedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3629A0277800C6157B /* SegmentedSection.swift */; };
+		79E5EF3929A0478F00C6157B /* OnTVMoviesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3829A0478F00C6157B /* OnTVMoviesEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +189,7 @@
 		79E5EF3229A021E500C6157B /* MovieProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProtocol.swift; sourceTree = "<group>"; };
 		79E5EF3429A0261E00C6157B /* MoviesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesContainer.swift; sourceTree = "<group>"; };
 		79E5EF3629A0277800C6157B /* SegmentedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedSection.swift; sourceTree = "<group>"; };
+		79E5EF3829A0478F00C6157B /* OnTVMoviesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTVMoviesEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +371,7 @@
 				79E5EF3229A021E500C6157B /* MovieProtocol.swift */,
 				7900FD2F299D608C00381D8C /* GenericMovieEntity.swift */,
 				7900FD31299D619E00381D8C /* GenericMovieResponseEntity.swift */,
+				79E5EF3829A0478F00C6157B /* OnTVMoviesEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				79DE75F9299EBED20069F1CC /* MoviesListInteractor.swift in Sources */,
 				79DE763C299F7C8C0069F1CC /* GenresEntity.swift in Sources */,
 				79DE75FB299EC5600069F1CC /* UIColorExtension.swift in Sources */,
+				79E5EF3929A0478F00C6157B /* OnTVMoviesEntity.swift in Sources */,
 				79DE7637299F7A790069F1CC /* MovieDetailViewController.swift in Sources */,
 				79DE7639299F7A790069F1CC /* MovieDetailInteractor.swift in Sources */,
 				79DE7641299F8C0F0069F1CC /* MovieDetailView.swift in Sources */,
