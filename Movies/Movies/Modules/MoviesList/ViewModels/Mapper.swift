@@ -13,7 +13,7 @@ struct Mapper {
         
         return MovieViewModel(
             id: entity.id,
-            imageUrl: URL(string: "https://image.tmdb.org/t/p/w200" + entity.imageUrl.orEmpty),
+            imageUrl: URL(string: URLBuilder.baseUrlToGetImage + entity.imageUrl.orEmpty),
             title: entity.title,
             date: date,
             score: entity.votes.toString(),

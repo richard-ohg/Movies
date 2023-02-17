@@ -10,6 +10,7 @@ import Foundation
 struct URLBuilder {
     private static let baseUrlDefault = "https://api.themoviedb.org"
     private static let apiKey = "af1d327389d620e0983e23be3562cc8d"
+    static let baseUrlToGetImage = "https://image.tmdb.org/t/p/w200"
     
     let urlComponents: URLComponents?
     var scheme: String = "https"
