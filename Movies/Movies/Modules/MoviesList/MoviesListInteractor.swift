@@ -16,7 +16,7 @@ class MoviesListInteractor: MoviesList_PresenterToInteractorProtocol {
             let result = await RequestManager.shared.fetchPopularMovies()
             switch result {
             case .success(let response):
-                presenter?.didFetch(result: response)
+                presenter?.didFetchPopularMovies(result: response)
             case .failure(let error):
                 presenter?.showError(error: error)
             }

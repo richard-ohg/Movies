@@ -8,7 +8,7 @@
 import Foundation
 
 struct Mapper {
-    func map(entity: PopularMovieEntity) -> MovieViewModel {
+    func map<T: MovieProtocol>(entity: T) -> MovieViewModel {
         let date = entity.date.transformDate(fromFormat: "yyyy-MM-dd", toFormat: "MMM dd, yyyy")
         
         return MovieViewModel(

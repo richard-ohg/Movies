@@ -32,16 +32,27 @@ class RequestManager {
         authFirebaseClient.getCurrentUser()
     }
     
-    func fetchPopularMovies(withPage page: Int = 1) async -> Result<PopularMovieResponseEntity, Error> {
+    func fetchPopularMovies(withPage page: Int = 1) async -> Result<GenericMovieResponseEntity<GenericMovieEntity>, Error> {
         do {
             var builder = URLBuilder()
             builder.config(path: .popularMovies, queryParams: ["page" : page])
-            let apiClientResult = try await apiClient.request(url: builder.getUrl(), type: PopularMovieResponseEntity.self)
+            let apiClientResult = try await apiClient.request(url: builder.getUrl(), type: GenericMovieResponseEntity<GenericMovieEntity>.self)
             return .success(apiClientResult)
         } catch {
             return .failure(error)
         }
     }
+    
+//    func fetchTopRatedMovies(withPage page: Int = 1) async -> Result<PopularMovieResponseEntity, Error> {
+//        do {
+//            var builder = URLBuilder()
+//            builder.config(path: .popularMovies, queryParams: ["page" : page])
+//            let apiClientResult = try await apiClient.request(url: builder.getUrl(), type: PopularMovieResponseEntity.self)
+//            return .success(apiClientResult)
+//        } catch {
+//            return .failure(error)
+//        }
+//    }
     
     func fetchMovieDetail(with id: Int) async -> Result<MovieDetailResponseEntity, Error> {
         do {

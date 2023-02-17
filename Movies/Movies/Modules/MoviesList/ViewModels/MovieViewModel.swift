@@ -14,4 +14,6 @@ struct MovieViewModel {
     let date: String
     let score: String
     let description: String
+    
+    static var empty = MovieViewModel(id: 0, imageUrl: nil, title: .empty, date: .empty, score: .empty, description: .empty)
 }
