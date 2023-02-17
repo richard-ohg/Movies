@@ -42,11 +42,15 @@ extension MoviesListPresenter: MoviesList_InteractorToPresenterProtocol {
     func didFetch(result: PopularMovieResponseEntity) {
         popularMoviesViewModel = result.results.map(mapper.map(entity:))
         view?.update()
-        view?.hideSpinner()
+        DispatchQueue.main.async {
+            self.view?.hideSpinner()
+        }
     }
     
     func showError(error: Error) {
-        view?.hideSpinner()
+        DispatchQueue.main.async {
+            self.view?.hideSpinner()
+        }
         view?.showErrorMessage(error: error)
     }
     

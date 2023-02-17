@@ -24,12 +24,16 @@ class LoginPresenter: Login_ViewToPresenterProtocol {
 extension LoginPresenter: Login_InteractorToPresenterProtocol {
     
     func loginSuccess() {
-        view?.hideSpinner()
+        DispatchQueue.main.async {
+            self.view?.hideSpinner()
+        }
         router?.goToMoviesList()
     }
     
     func loginError() {
-        view?.hideSpinner()
+        DispatchQueue.main.async {
+            self.view?.hideSpinner()
+        }
         view?.showErrorMessage()
     }
 }
