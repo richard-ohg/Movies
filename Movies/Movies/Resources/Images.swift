@@ -15,5 +15,5 @@ struct Images {
     static let righButtonNavigationMovieList = "line.3.horizontal.circle.fill"
     static let scoreLabel = "star.fill"
     static let defaultProfileImage = "avatar"
-    
+    static let placeholderMovieImage = "placeholderImage"
 }

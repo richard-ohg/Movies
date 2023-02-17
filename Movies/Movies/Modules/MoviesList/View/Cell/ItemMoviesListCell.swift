@@ -123,7 +123,7 @@ final class ItemMoviesListCell: UICollectionViewCell {
     }
     
     func configData(itemData: MovieViewModel) {
-        movieImageView.kf.setImage(with: itemData.imageUrl)
+        movieImageView.kf.setImage(with: itemData.imageUrl, placeholder: UIImage(named: Images.placeholderMovieImage))
         titleImageLabel.text = itemData.title
         dateMovieLabel.text = itemData.date
         setScore(score: itemData.score)
