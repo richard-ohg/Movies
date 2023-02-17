@@ -20,6 +20,7 @@ protocol MoviesList_ViewToPresenterProtocol: AnyObject {
     func logout()
     func showProfile()
     func didSelectItem(with indexPath: IndexPath)
+    func segmentedValueChanged(section: Int)
 }
 
 // MARK: PRESENTER -> INTERACTOR
@@ -27,6 +28,7 @@ protocol MoviesList_PresenterToInteractorProtocol: AnyObject {
     var presenter: MoviesList_InteractorToPresenterProtocol? { get set }
     
     func fetchPopularMovies()
+    func fetchTopRatedMovies()
     func logout()
 }
 
@@ -34,7 +36,7 @@ protocol MoviesList_PresenterToInteractorProtocol: AnyObject {
 protocol MoviesList_InteractorToPresenterProtocol: AnyObject {
     
     func didFetchPopularMovies(result: GenericMovieResponseEntity<GenericMovieEntity>)
-//    func didFetchTopRatedMovies(result: GenericMovieResponseEntity<GenericMovieEntity>)
+    func didFetchTopRatedMovies(result: GenericMovieResponseEntity<GenericMovieEntity>)
 //    func didFetchOnTVMovies(result: GenericMovieResponseEntity<GenericMovieEntity>)
 //    func didFetchAiringMovies(result: GenericMovieResponseEntity<GenericMovieEntity>)
     func showError(error: Error)
