@@ -12,7 +12,7 @@ struct Mapper {
         let date = entity.date.transformDate(fromFormat: "yyyy-MM-dd", toFormat: "MMM dd, yyyy")
         
         return PopularMovieViewModel(
-            imageUrl: URL(string: "https://image.tmdb.org/t/p/w280/sv1xJUazXeYqALzczSZ3O6nkH75.jpg" + entity.imageUrl.orEmpty),
+            imageUrl: URL(string: "https://image.tmdb.org/t/p/w200" + entity.imageUrl.orEmpty),
             title: entity.title,
             date: date,
             score: entity.votes.toString(),

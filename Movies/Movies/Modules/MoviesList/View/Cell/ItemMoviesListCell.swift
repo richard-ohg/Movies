@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ItemMoviesListCell: UICollectionViewCell {
     // MARK: - Public properties
@@ -122,7 +123,7 @@ final class ItemMoviesListCell: UICollectionViewCell {
     }
     
     func configData(itemData: PopularMovieViewModel) {
-        movieImageView.image = UIImage(named: "iconMovieDB")
+        movieImageView.kf.setImage(with: itemData.imageUrl)
         titleImageLabel.text = itemData.title
         dateMovieLabel.text = itemData.date
         setScore(score: itemData.score)
