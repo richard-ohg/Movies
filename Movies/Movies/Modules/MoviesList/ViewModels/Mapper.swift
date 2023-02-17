@@ -12,6 +12,7 @@ struct Mapper {
         let date = entity.date.transformDate(fromFormat: "yyyy-MM-dd", toFormat: "MMM dd, yyyy")
         
         return MovieViewModel(
+            id: entity.id,
             imageUrl: URL(string: "https://image.tmdb.org/t/p/w200" + entity.imageUrl.orEmpty),
             title: entity.title,
             date: date,
