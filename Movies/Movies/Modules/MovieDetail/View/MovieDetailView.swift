@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol MovieDetailViewDelegate: AnyObject {}
 
@@ -62,7 +63,6 @@ final class MovieDetailView: UIView {
     private let genresButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
         configuration.title = "Aventura, ciencia ficción, aventura"
-        configuration.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         let button = UIButton()
         button.tintColor = .darkGray
         button.configuration = configuration
@@ -224,5 +224,28 @@ final class MovieDetailView: UIView {
             right: ViewValues.normalCollectionPadding
         )
         return layout
+    }
+    
+    func setInfo(movie: MovieDetailViewModel) {
+        movieImageView.kf.setImage(
+            with: movie.imageUrl,
+            placeholder: UIImage(named: Images.placeholderMovieImage)
+        )
+        
+        movieTitleLabel.text = movie.title
+        categoryButton.setTitle(movie.category.rawValue, for: .normal)
+        durationButton.setTitle(movie.runningTime, for: .normal)
+        languageButton.setTitle(movie.laguage.getLanguage(), for: .normal)
+        genresButton.setTitle(movie.genres, for: .normal)
+        dateLabel.text = movie.date
+        scoreMovieLabel.set(text: movie.score, leftIcon: UIImage(systemName: Images.scoreLabel)?.withTintColor(.white))
+        votesCountLabel.text = movie.numberOfVotes
+        productionCompaniesCollectionView.reloadData()
+    }
+    
+    func reload() {
+        DispatchQueue.main.async {
+            self.productionCompaniesCollectionView.reloadData()
+        }
     }
 }

@@ -25,21 +25,32 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        presenter?.viewDidLoad()
+        presenter?.viewDidLoad()
     }
 }
 
 // MARK: - P R E S E N T E R · T O · V I E W
-extension MovieDetailViewController: MovieDetail_PresenterToViewProtocol {}
 extension MovieDetailViewController: MovieDetailViewDelegate {}
 extension MovieDetailViewController: UICollectionViewDelegate {}
+extension MovieDetailViewController: MessageDisplayable {}
+
+extension MovieDetailViewController: MovieDetail_PresenterToViewProtocol {
+    
+    func update(movieDetailViewModel: MovieDetailViewModel) {
+        movieDetailView.setInfo(movie: movieDetailViewModel)
+    }
+    
+    func showErrorMessage(error: Error) {
+        presentSimpleAlert(title: AppLocalized.errorTitle, message: error.localizedDescription)
+    }
+}
 
 extension MovieDetailViewController: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        4
+        (presenter?.productionCompaniesItemsCount).orZero
     }
     
     func collectionView(
@@ -49,11 +60,12 @@ extension MovieDetailViewController: UICollectionViewDataSource {
         guard
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: ItemMovieDetailCell.reuseIdentifier,
-                for: indexPath) as? ItemMovieDetailCell
+                for: indexPath) as? ItemMovieDetailCell,
+            let productionCompanyItem = presenter?.getItem(indexPath: indexPath)
         else {
             return UICollectionViewCell()
         }
-        cell.configData()
+        cell.configData(itemData: productionCompanyItem)
         return cell
     }
 }

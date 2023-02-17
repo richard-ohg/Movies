@@ -13,7 +13,10 @@ protocol MovieDetail_ViewToPresenterProtocol: AnyObject {
 	var view: MovieDetail_PresenterToViewProtocol? { get set }
 	var interactor: MovieDetail_PresenterToInteractorProtocol? { get set }
 	var router: MovieDetail_PresenterToRouterProtocol? { get set }
+    
+    var productionCompaniesItemsCount: Int { get }
 
+    func getItem(indexPath: IndexPath) -> ProductionCompany
     func viewDidLoad()
 }
 
@@ -26,11 +29,17 @@ protocol MovieDetail_PresenterToInteractorProtocol: AnyObject {
 
 // MARK: INTERACTOR -> PRESENTER
 protocol MovieDetail_InteractorToPresenterProtocol: AnyObject {
+    
+    func didFetchMovieDetail(entity: MovieDetailResponseEntity)
+    func showError(error: Error)
 }
 
 // MARK: PRESENTER -> VIEW
-protocol MovieDetail_PresenterToViewProtocol: AnyObject {
+protocol MovieDetail_PresenterToViewProtocol: SpinnerDisplayable, AnyObject {
     var presenter: MovieDetail_ViewToPresenterProtocol? { get set }
+    
+    func update(movieDetailViewModel: MovieDetailViewModel)
+    func showErrorMessage(error: Error)
 }
 
 // MARK: PRESENTER -> ROUTER

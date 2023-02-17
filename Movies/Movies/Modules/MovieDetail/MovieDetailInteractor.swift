@@ -16,9 +16,9 @@ class MovieDetailInteractor: MovieDetail_PresenterToInteractorProtocol {
             let result = await RequestManager.shared.fetchMovieDetail(with: id)
             switch result {
             case .success(let response):
-                print(response)
+                presenter?.didFetchMovieDetail(entity: response)
             case .failure(let error):
-                print(error)
+                presenter?.showError(error: error)
             }
         }
     }
