@@ -77,42 +77,4 @@ class MoviesListViewController: UIViewController {
     }
 }
 
-// MARK: - P R E S E N T E R · T O · V I E W
-extension MoviesListViewController: MoviesList_PresenterToViewProtocol {
-    
-    func update() {
-        DispatchQueue.main.async {
-            self.movieListView.reload()
-        }
-    }
-    
-    func showErrorMessage(error: Error) {
-        
-    }
-}
-
-extension MoviesListViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.itemsCount ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: ItemMoviesListCell.reuseIdentifier,
-                for: indexPath) as? ItemMoviesListCell,
-            let dataItem = presenter?.getItem(indexPath: indexPath)
-        else {
-            return UICollectionViewCell()
-        }
-        cell.configData(itemData: dataItem)
-        return cell
-    }
-}
-
-extension MoviesListViewController: UICollectionViewDelegate {}
 extension MoviesListViewController: MessageDisplayable {}
-
-extension MoviesListViewController: MoviesListViewDelegate {
-    
-}

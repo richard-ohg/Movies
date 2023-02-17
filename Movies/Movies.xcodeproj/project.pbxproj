@@ -61,6 +61,9 @@
 		79DE7611299F36530069F1CC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 79DE7610299F36530069F1CC /* Kingfisher */; };
 		79DE7613299F3CFC0069F1CC /* MessageDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7612299F3CFC0069F1CC /* MessageDisplayable.swift */; };
 		79DE7615299F437E0069F1CC /* MoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7614299F437E0069F1CC /* MoviesListView.swift */; };
+		79DE7617299F478C0069F1CC /* MoviesListViewController+MoviesList_PresenterToViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7616299F478C0069F1CC /* MoviesListViewController+MoviesList_PresenterToViewProtocol.swift */; };
+		79DE7619299F47CF0069F1CC /* MoviesListViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7618299F47CF0069F1CC /* MoviesListViewController+CollectionView.swift */; };
+		79DE761B299F48040069F1CC /* MoviesListViewController+MoviesListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE761A299F48040069F1CC /* MoviesListViewController+MoviesListViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,9 @@
 		79DE760D299F27F60069F1CC /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		79DE7612299F3CFC0069F1CC /* MessageDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayable.swift; sourceTree = "<group>"; };
 		79DE7614299F437E0069F1CC /* MoviesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListView.swift; sourceTree = "<group>"; };
+		79DE7616299F478C0069F1CC /* MoviesListViewController+MoviesList_PresenterToViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesListViewController+MoviesList_PresenterToViewProtocol.swift"; sourceTree = "<group>"; };
+		79DE7618299F47CF0069F1CC /* MoviesListViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesListViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		79DE761A299F48040069F1CC /* MoviesListViewController+MoviesListViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesListViewController+MoviesListViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +450,9 @@
 		79DE7600299ED7F80069F1CC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				79DE7616299F478C0069F1CC /* MoviesListViewController+MoviesList_PresenterToViewProtocol.swift */,
+				79DE7618299F47CF0069F1CC /* MoviesListViewController+CollectionView.swift */,
+				79DE761A299F48040069F1CC /* MoviesListViewController+MoviesListViewDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -594,6 +603,7 @@
 				79DE75FB299EC5600069F1CC /* UIColorExtension.swift in Sources */,
 				79DE75F7299EBED20069F1CC /* MoviesListViewController.swift in Sources */,
 				7900FD59299DFDDF00381D8C /* AuthenticationFirebaseServiceProtocol.swift in Sources */,
+				79DE7617299F478C0069F1CC /* MoviesListViewController+MoviesList_PresenterToViewProtocol.swift in Sources */,
 				7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */,
 				7900FD32299D619E00381D8C /* PopularMovieResponseEntity.swift in Sources */,
 				79DE75E5299EA12C0069F1CC /* LoginViewController+LoginViewDelegate.swift in Sources */,
@@ -607,6 +617,7 @@
 				79DE75F6299EBED20069F1CC /* MoviesListRouter.swift in Sources */,
 				79DE75F8299EBED20069F1CC /* MoviesListProtocols.swift in Sources */,
 				7900FCDF299D390D00381D8C /* AppDelegate.swift in Sources */,
+				79DE761B299F48040069F1CC /* MoviesListViewController+MoviesListViewDelegate.swift in Sources */,
 				7900FD41299D761800381D8C /* AppLocalized.swift in Sources */,
 				7900FD5B299DFEA200381D8C /* AuthenticationFirebaseService.swift in Sources */,
 				79DE75E7299EA1510069F1CC /* LoginViewController+Login_PresenterToViewProtocol.swift in Sources */,
@@ -618,6 +629,7 @@
 				79DE75FD299ED43F0069F1CC /* Colors.swift in Sources */,
 				79DE7605299EDDCA0069F1CC /* ItemMoviesListCell.swift in Sources */,
 				79DE760E299F27F60069F1CC /* DoubleExtension.swift in Sources */,
+				79DE7619299F47CF0069F1CC /* MoviesListViewController+CollectionView.swift in Sources */,
 				7900FD48299D866900381D8C /* LoginTextField.swift in Sources */,
 				79DE75F5299EBED20069F1CC /* MoviesListPresenter.swift in Sources */,
 				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,
