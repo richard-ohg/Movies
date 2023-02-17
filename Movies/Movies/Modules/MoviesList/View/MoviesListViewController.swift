@@ -97,16 +97,15 @@ class MoviesListViewController: UIViewController {
     
     private func makeLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
-        let layoutWidth = (ViewValues.widthScreen - ViewValues.doublePadding) / ViewValues.multiplierTwo
-        let layoutHeight = (ViewValues.widthScreen - ViewValues.doublePadding) / ViewValues.multiplierTwo
-        layout.itemSize = CGSize(width: layoutWidth, height: layoutHeight)
+        let itemWidth = (ViewValues.widthScreen - ViewValues.doubleCollectionPadding) / ViewValues.multiplierTwo
+        layout.itemSize = CGSize(width: itemWidth, height: ViewValues.movieItemHeight)
         layout.minimumLineSpacing = .zero
         layout.minimumInteritemSpacing = .zero
         layout.sectionInset = UIEdgeInsets(
             top: .zero,
-            left: ViewValues.normalPadding,
+            left: ViewValues.normalCollectionPadding,
             bottom: .zero,
-            right: ViewValues.normalPadding
+            right: ViewValues.normalCollectionPadding
         )
         return layout
     }

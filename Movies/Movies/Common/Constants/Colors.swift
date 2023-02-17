@@ -13,6 +13,7 @@ struct Colors {
     static let backgroundColorMoviesListView = UIColor.getColorWith(hex: "#0c151a")
     static let navigationBackgroundViewColor = UIColor.getColorWith(hex: "#30373a")
     static let navigationTitleColor = UIColor.white
-    
-    
+    static let backgroundMovieContainerCell = UIColor.getColorWith(hex: "#19272d")
+    static let defaultLabelOfMovies = UIColor.getColorWith(hex: "#62cd70")
+    static let descriptionLabelOfMovies = UIColor.white
 }

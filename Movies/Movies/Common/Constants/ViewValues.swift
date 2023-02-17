@@ -50,9 +50,26 @@ struct ViewValues {
     static let righButtonFrameWidth: CGFloat = 34
     
     static let widthScreen = UIScreen.main.bounds.width
-    static let doublePadding: CGFloat = 20
-    static let normalPadding: CGFloat = 10
+    static let doubleCollectionPadding: CGFloat = 10
+    static let normalCollectionPadding: CGFloat = 5
     static let multiplierTwo: CGFloat = 2
     
-    static let collectionViewTopAnchor: CGFloat = 10
+    static let collectionViewTopAnchor: CGFloat = 20
+    
+    static let containerCornerRadius: CGFloat = 10
+    static let movieImageHeight: CGFloat = 200
+    static let defaultMovieLabelFontSize: CGFloat = 14
+    static let descriptionMovieLabelFontSize: CGFloat = 12
+    
+    static let movieItemHeight: CGFloat = 400
+    static let titleImageLabelPadding: CGFloat = 10
+    
+    static let dateMovieLabelTop: CGFloat = 20
+    static let dateMovieLabelLeading: CGFloat = 10
+    
+    static let scoreMovieLabelTrailing: CGFloat = 10
+    static let scoreMovieLabelLeading: CGFloat = 5
+    
+    static let descriptionMovieLabelTopBottom: CGFloat = 20
+    static let descriptionMovieLabelLeadingTrailing: CGFloat = 10
 }
