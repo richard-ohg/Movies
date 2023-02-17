@@ -15,14 +15,40 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
     var router: MoviesList_PresenterToRouterProtocol?
     
     let mapper: Mapper = Mapper()
-    private var popularMoviesViewModel: [MovieViewModel] = []
+    var lastSelectedSegmentedIndex: Int = 0
+    private var moviesContainer: MoviesContainer = MoviesContainer()
     
-    var itemsCount: Int {
-        popularMoviesViewModel.count
+    func getItemsCount() -> Int {
+        guard let section = SegmentedSection(rawValue: lastSelectedSegmentedIndex)
+        else { return 0 }
+        
+        switch section {
+        case .popularMovies:
+            return moviesContainer.popularMoviesViewModel.count
+        case .topRated:
+            return 1
+        case .onTV:
+            return 1
+        case .airing:
+            return 1
+        }
     }
     
     func getItem(indexPath: IndexPath) -> MovieViewModel {
-        popularMoviesViewModel[indexPath.row]
+        guard let section = SegmentedSection(rawValue: lastSelectedSegmentedIndex)
+        else { return .empty }
+        
+        switch section {
+        case .popularMovies:
+            return moviesContainer.popularMoviesViewModel[indexPath.row]
+        case .topRated:
+            break
+        case .onTV:
+            break
+        case .airing:
+            break
+        }
+        return moviesContainer.popularMoviesViewModel[indexPath.row]
     }
     
     func viewDidLoad() {
@@ -40,16 +66,31 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
     }
     
     func didSelectItem(with indexPath: IndexPath) {
-        let movie = popularMoviesViewModel[indexPath.row]
-        router?.goToMovieDetail(with: movie.id)
+        guard let section = SegmentedSection(rawValue: lastSelectedSegmentedIndex)
+        else { return }
+        
+        var movieId: Int = 0
+        
+        switch section {
+        case .popularMovies:
+            movieId = moviesContainer.popularMoviesViewModel[indexPath.row].id
+        case .topRated:
+            break
+        case .onTV:
+            break
+        case .airing:
+            break
+        }
+        
+        router?.goToMovieDetail(with: movieId)
     }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
 extension MoviesListPresenter: MoviesList_InteractorToPresenterProtocol {
 
-    func didFetch(result: PopularMovieResponseEntity) {
-        popularMoviesViewModel = result.results.map(mapper.map(entity:))
+    func didFetchPopularMovies(result: GenericMovieResponseEntity<GenericMovieEntity>) {
+        moviesContainer.popularMoviesViewModel = result.results.map(mapper.map(entity:))
         view?.update()
         DispatchQueue.main.async {
             self.view?.hideSpinner()

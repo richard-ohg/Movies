@@ -12,7 +12,7 @@ extension MoviesListViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return presenter?.itemsCount ?? 0
+        return (presenter?.getItemsCount()).orZero
     }
     
     func collectionView(
