@@ -71,6 +71,7 @@
 		79DE7626299F5C480069F1CC /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7621299F5C480069F1CC /* ProfileInteractor.swift */; };
 		79DE7628299F65B90069F1CC /* MoviesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7627299F65B90069F1CC /* MoviesCollectionView.swift */; };
 		79DE762A299F6E720069F1CC /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7629299F6E720069F1CC /* SectionHeader.swift */; };
+		79DE762E299F716F0069F1CC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE762D299F716F0069F1CC /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		79DE7621299F5C480069F1CC /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		79DE7627299F65B90069F1CC /* MoviesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionView.swift; sourceTree = "<group>"; };
 		79DE7629299F6E720069F1CC /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		79DE762D299F716F0069F1CC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,13 +498,30 @@
 		79DE761C299F5C330069F1CC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				79DE762B299F71480069F1CC /* View */,
 				79DE7620299F5C480069F1CC /* ProfileProtocols.swift */,
-				79DE761F299F5C480069F1CC /* ProfileViewController.swift */,
 				79DE761D299F5C480069F1CC /* ProfilePresenter.swift */,
 				79DE7621299F5C480069F1CC /* ProfileInteractor.swift */,
 				79DE761E299F5C480069F1CC /* ProfileRouter.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		79DE762B299F71480069F1CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79DE762C299F714E0069F1CC /* Extensions */,
+				79DE761F299F5C480069F1CC /* ProfileViewController.swift */,
+				79DE762D299F716F0069F1CC /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79DE762C299F714E0069F1CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,6 +652,7 @@
 				79DE75F9299EBED20069F1CC /* MoviesListInteractor.swift in Sources */,
 				79DE75FB299EC5600069F1CC /* UIColorExtension.swift in Sources */,
 				79DE75F7299EBED20069F1CC /* MoviesListViewController.swift in Sources */,
+				79DE762E299F716F0069F1CC /* ProfileView.swift in Sources */,
 				7900FD59299DFDDF00381D8C /* AuthenticationFirebaseServiceProtocol.swift in Sources */,
 				79DE7617299F478C0069F1CC /* MoviesListViewController+MoviesList_PresenterToViewProtocol.swift in Sources */,
 				7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */,
