@@ -18,13 +18,16 @@ struct MovieDetailResponseEntity: Decodable {
     let date: String
     let language: String
     let runtime: Int?
+    let vote_count: Int
+    let productionCompanies: [ProductionCompanyEntity]
 
     enum CodingKeys: String, CodingKey {
-        case id, genres, title, overview, runtime
+        case id, genres, title, overview, runtime, vote_count
         case isForAdults = "adult"
         case imageUrl = "poster_path"
         case votes = "vote_average"
         case date = "release_date"
         case language = "original_language"
+        case productionCompanies = "production_companies"
     }
 }
