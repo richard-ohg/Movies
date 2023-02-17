@@ -121,12 +121,12 @@ final class ItemMoviesListCell: UICollectionViewCell {
         )
     }
     
-    func configData() {
+    func configData(itemData: PopularMovieViewModel) {
         movieImageView.image = UIImage(named: "iconMovieDB")
-        titleImageLabel.text = "titulo pelicula"
-        dateMovieLabel.text = "25 Junio 2019"
-        setScore(score: "5.5")
-        descriptionMovieLabel.text = "habia uwrsladhlfhaekHFJKLHKLDSH<,MZHXJ,HFJKScd<nzkjsd<zvghjc,b,sd<hmzbxfv,cmj< absd<kzx,hvb<kjasd<bj jdsbjhzkj, ewkuGADJKHFJKds jaGHJSKDHFJKWEba jkhdakjhjskhjkd bjskdGKCHGJKbnjkn jk<aedhcueSNCKLD"
+        titleImageLabel.text = itemData.title
+        dateMovieLabel.text = itemData.date
+        setScore(score: itemData.score)
+        descriptionMovieLabel.text = itemData.description
     }
     
     private func setScore(score: String) {
