@@ -72,4 +72,21 @@ struct ViewValues {
     
     static let descriptionMovieLabelTopBottom: CGFloat = 20
     static let descriptionMovieLabelLeadingTrailing: CGFloat = 10
+    
+    static let titleLabelProfileFontSize: CGFloat = 30
+    static let imageProfileHeight: CGFloat = 150
+    
+    static let emailLabelProfileFontSize: CGFloat = 14
+    
+    static let titleLabelProfileTop: CGFloat = 30
+    static let titleLabelProfileLeadingTrailing: CGFloat = 20
+    
+    static let profileImageTop: CGFloat = 40
+    static let profileImageLeading: CGFloat = 30
+    
+    static let profileEmailLabelTrailing: CGFloat = 10
+    static let profileEmailLabeleLeading: CGFloat = 30
+    
+    static let profileCollectionViewTop: CGFloat = 40
+    
 }

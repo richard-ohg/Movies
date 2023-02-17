@@ -15,27 +15,26 @@ final class ProfileView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.font = UIFont.boldSystemFont(ofSize: ViewValues.titleLabelProfileFontSize)
         label.textColor = Colors.defaultLabel
-        label.text = "Profile"
+        label.text = AppLocalized.profileTitleLabel
         return label
     }()
     
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "avatar")
-        imageView.setHeightConstraint(with: 150)
-        imageView.setWidthConstraint(with: 150)
-        imageView.setCornerRadius(withValue: 75)
+        imageView.image = UIImage(named: Images.defaultProfileImage)
+        imageView.setHeightConstraint(with: ViewValues.imageProfileHeight)
+        imageView.setWidthConstraint(with: ViewValues.imageProfileHeight)
+        imageView.setCornerRadius(withValue: ViewValues.imageProfileHeight/2)
         return imageView
     }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: ViewValues.emailLabelProfileFontSize)
         label.textColor = Colors.defaultLabel
-        label.text = "ricardo@gmail.com"
         return label
     }()
     
@@ -77,23 +76,23 @@ final class ProfileView: UIView {
             top: layoutMarginsGuide.topAnchor,
             trailing: trailingAnchor,
             leading: leadingAnchor,
-            pTop: 30,
-            pTrailing: 20,
-            pLeading: 20
+            pTop: ViewValues.titleLabelProfileTop,
+            pTrailing: ViewValues.titleLabelProfileLeadingTrailing,
+            pLeading: ViewValues.titleLabelProfileLeadingTrailing
         )
         
         profileImageView.setConstraints(
             top: titleLabel.bottomAnchor,
             leading: leadingAnchor,
-            pTop: 40,
-            pLeading: 30
+            pTop: ViewValues.profileImageTop,
+            pLeading: ViewValues.profileImageLeading
         )
         
         emailLabel.setConstraints(
             trailing: trailingAnchor,
             leading: profileImageView.trailingAnchor,
-            pTrailing: 10,
-            pLeading: 30
+            pTrailing: ViewValues.profileEmailLabelTrailing,
+            pLeading: ViewValues.profileEmailLabeleLeading
         )
         emailLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor).isActive = true
         
@@ -102,7 +101,7 @@ final class ProfileView: UIView {
             trailing: trailingAnchor,
             bottom: bottomAnchor,
             leading: leadingAnchor,
-            pTop: 40)
+            pTop: ViewValues.profileCollectionViewTop)
     }
     
     func reload() {
