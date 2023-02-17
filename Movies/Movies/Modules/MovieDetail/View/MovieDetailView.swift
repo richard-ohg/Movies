@@ -69,6 +69,15 @@ final class MovieDetailView: UIView {
         return button
     }()
     
+    private let dateLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: ViewValues.defaultMovieLabelFontSize)
+        label.text = "Ago 24, 2016"
+        label.textAlignment = .center
+        return label
+    }()
+    
     private let scoreMovieLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -116,7 +125,17 @@ final class MovieDetailView: UIView {
     }
     
     private func addSubviews() {
-        add(subviews: movieImageView, movieTitleLabel, categoryButton, durationButton, languageButton, genresButton, scoreMovieLabel, votesCountLabel, productionCompaniesCollectionView)
+        add(subviews:
+            movieImageView,
+            movieTitleLabel,
+            categoryButton,
+            durationButton,
+            languageButton,
+            genresButton,
+            dateLabel,
+            scoreMovieLabel,
+            votesCountLabel,
+            productionCompaniesCollectionView)
     }
     
     private func addConstraints() {
@@ -159,8 +178,16 @@ final class MovieDetailView: UIView {
             pTrailing: 10,
             pLeading: 10)
         
-        scoreMovieLabel.setConstraints(
+        dateLabel.setConstraints(
             top: genresButton.bottomAnchor,
+            trailing: trailingAnchor,
+            leading: movieImageView.trailingAnchor,
+            pTop: 15,
+            pTrailing: 20,
+            pLeading: 20)
+        
+        scoreMovieLabel.setConstraints(
+            top: dateLabel.bottomAnchor,
             leading: movieImageView.trailingAnchor,
             pTop: 20,
             pLeading: 20)
