@@ -9,6 +9,8 @@
 import UIKit
 
 class MoviesListRouter {
+    
+    weak var view: UIViewController?
 	
     static func createModule() -> UIViewController {
         
@@ -22,6 +24,7 @@ class MoviesListRouter {
         presenter.interactor = interactor
         presenter.router = router
         interactor.presenter = presenter
+        router.view = view
         
         return view
     }
@@ -29,7 +32,6 @@ class MoviesListRouter {
 
 extension MoviesListRouter: MoviesList_PresenterToRouterProtocol {
     func goToLogin() {
-//        TODO: missing implementation
-        print("goToLogin")
+        view?.navigationController?.popViewController(animated: true)
     }
 }

@@ -62,6 +62,7 @@ class MoviesListViewController: UIViewController {
             width: ViewValues.righButtonFrameWidth,
             height: ViewValues.righButtonFrameWidth)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: righButton)
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
     @objc func showMenu() {
