@@ -9,4 +9,5 @@ import Foundation
 
 protocol AuthenticationFirebaseServiceProtocol {
     func login(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void)
+    func logout() throws
 }
