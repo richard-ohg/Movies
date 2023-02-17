@@ -88,6 +88,7 @@ class MoviesListViewController: UIViewController {
         
         let righButton = UIButton(type: .system)
         righButton.setImage(UIImage(systemName: Images.righButtonNavigationMovieList), for: .normal)
+        righButton.addTarget(self, action: #selector(showMenu), for: .touchUpInside)
         righButton.frame = CGRect(
             x: ViewValues.righButtonFrameX,
             y: ViewValues.righButtonFrameY,
@@ -111,8 +112,20 @@ class MoviesListViewController: UIViewController {
         return layout
     }
     
-    @objc func segmentedValueChanged(_ sender:UISegmentedControl) {
+    @objc func segmentedValueChanged(_ sender: UISegmentedControl) {
         print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
+    }
+    
+    @objc func showMenu() {
+        let profileAction = UIAlertAction(title: AppLocalized.profileActionTitle, style: .default)
+        let logoutAction = UIAlertAction(title: AppLocalized.logoutActionTitle, style: .destructive)
+        let cancelAction = UIAlertAction(title: AppLocalized.cancelActionTitle, style: .cancel)
+        
+        presentCustomAlert(
+            title: nil,
+            message: AppLocalized.menuAlertMessage,
+            customActions: [profileAction, logoutAction, cancelAction],
+            style: .actionSheet)
     }
 }
 
@@ -150,3 +163,4 @@ extension MoviesListViewController: UICollectionViewDataSource {
 }
 
 extension MoviesListViewController: UICollectionViewDelegate {}
+extension MoviesListViewController: MessageDisplayable {}

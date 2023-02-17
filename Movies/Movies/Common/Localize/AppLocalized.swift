@@ -21,4 +21,13 @@ struct AppLocalized {
     static let fourthItemSegmentedControl = "Airing"
     
     static let titleMoviesList = "TV Shows"
+    
+    static let defaultAlertTitle = "Alerta"
+    static let defaultOkButton = "Aceptar"
+    static let defaultCancelButton = "Cancelar"
+    
+    static let menuAlertMessage = "What do you want to do?"
+    static let profileActionTitle = "View Profile"
+    static let logoutActionTitle = "Log out"
+    static let cancelActionTitle = "Cancel"
 }
