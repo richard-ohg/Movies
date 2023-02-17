@@ -59,6 +59,7 @@
 		79DE760C299F19730069F1CC /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE760B299F19730069F1CC /* Mapper.swift */; };
 		79DE760E299F27F60069F1CC /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE760D299F27F60069F1CC /* DoubleExtension.swift */; };
 		79DE7611299F36530069F1CC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 79DE7610299F36530069F1CC /* Kingfisher */; };
+		79DE7613299F3CFC0069F1CC /* MessageDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7612299F3CFC0069F1CC /* MessageDisplayable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		79DE7609299F196D0069F1CC /* PopularMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieViewModel.swift; sourceTree = "<group>"; };
 		79DE760B299F19730069F1CC /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		79DE760D299F27F60069F1CC /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		79DE7612299F3CFC0069F1CC /* MessageDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,6 +450,7 @@
 			children = (
 				79DE75E1299EA0170069F1CC /* SpinnerDisplayable.swift */,
 				79DE7602299EDD820069F1CC /* Reusable.swift */,
+				79DE7612299F3CFC0069F1CC /* MessageDisplayable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 			files = (
 				7900FD2A299D4CEF00381D8C /* ApiClientService.swift in Sources */,
 				7900FD1C299D463B00381D8C /* LoginViewController.swift in Sources */,
+				79DE7613299F3CFC0069F1CC /* MessageDisplayable.swift in Sources */,
 				79DE760A299F196D0069F1CC /* PopularMovieViewModel.swift in Sources */,
 				7900FD43299D762500381D8C /* ViewValues.swift in Sources */,
 				7900FD1D299D463B00381D8C /* LoginProtocols.swift in Sources */,
