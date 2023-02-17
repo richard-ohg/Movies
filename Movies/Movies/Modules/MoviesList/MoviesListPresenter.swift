@@ -15,13 +15,13 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
     var router: MoviesList_PresenterToRouterProtocol?
     
     let mapper: Mapper = Mapper()
-    private var popularMoviesViewModel: [PopularMovieViewModel] = []
+    private var popularMoviesViewModel: [MovieViewModel] = []
     
     var itemsCount: Int {
         popularMoviesViewModel.count
     }
     
-    func getItem(indexPath: IndexPath) -> PopularMovieViewModel {
+    func getItem(indexPath: IndexPath) -> MovieViewModel {
         popularMoviesViewModel[indexPath.row]
     }
     

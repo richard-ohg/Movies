@@ -122,7 +122,7 @@ final class ItemMoviesListCell: UICollectionViewCell {
         )
     }
     
-    func configData(itemData: PopularMovieViewModel) {
+    func configData(itemData: MovieViewModel) {
         movieImageView.kf.setImage(with: itemData.imageUrl)
         titleImageLabel.text = itemData.title
         dateMovieLabel.text = itemData.date

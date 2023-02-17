@@ -17,7 +17,7 @@ protocol MoviesList_ViewToPresenterProtocol: AnyObject {
     var itemsCount: Int { get }
     
     func viewDidLoad()
-    func getItem(indexPath: IndexPath) -> PopularMovieViewModel
+    func getItem(indexPath: IndexPath) -> MovieViewModel
     func logout()
     func showProfile()
 }
