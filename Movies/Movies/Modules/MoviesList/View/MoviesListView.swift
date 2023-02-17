@@ -24,10 +24,8 @@ final class MoviesListView: UIView {
         return segControl
     }()
     
-    private lazy var collectionView: UICollectionView = {
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: makeLayout())
-        collection.register(ItemMoviesListCell.self, forCellWithReuseIdentifier: ItemMoviesListCell.reuseIdentifier)
-        collection.backgroundColor = .clear
+    private lazy var collectionView: MoviesCollectionView = {
+        let collection = MoviesCollectionView()
         collection.delegate = delegate
         collection.dataSource = delegate
         return collection
@@ -79,21 +77,6 @@ final class MoviesListView: UIView {
         let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .normal)
         UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
-    }
-    
-    private func makeLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewFlowLayout()
-        let itemWidth = (ViewValues.widthScreen - ViewValues.doubleCollectionPadding) / ViewValues.multiplierTwo
-        layout.itemSize = CGSize(width: itemWidth, height: ViewValues.movieItemHeight)
-        layout.minimumLineSpacing = .zero
-        layout.minimumInteritemSpacing = .zero
-        layout.sectionInset = UIEdgeInsets(
-            top: .zero,
-            left: ViewValues.normalCollectionPadding,
-            bottom: .zero,
-            right: ViewValues.normalCollectionPadding
-        )
-        return layout
     }
     
     func reload() {
