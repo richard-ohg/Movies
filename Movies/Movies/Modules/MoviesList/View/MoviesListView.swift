@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol MoviesListViewDelegate: AnyObject {}
+protocol MoviesListViewDelegate: AnyObject {
+    func segmentedValueChanged(newValue: Int)
+}
 
 final class MoviesListView: UIView {
     
@@ -83,6 +85,6 @@ final class MoviesListView: UIView {
     }
     
     @objc func segmentedValueChanged(_ sender: UISegmentedControl) {
-        print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
+        delegate?.segmentedValueChanged(newValue: sender.selectedSegmentIndex)
     }
 }
