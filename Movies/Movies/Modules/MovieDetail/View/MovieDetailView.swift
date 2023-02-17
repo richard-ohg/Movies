@@ -239,6 +239,9 @@ final class MovieDetailView: UIView {
         scoreMovieLabel.set(text: movie.score, leftIcon: UIImage(systemName: Images.scoreLabel)?.withTintColor(.white))
         votesCountLabel.text = movie.numberOfVotes
         productionCompaniesCollectionView.reloadData()
+        
+        productionCompaniesCollectionView.isHidden = movie.productionCompanies.isEmpty
+        collectionTitleLabel.isHidden = movie.productionCompanies.isEmpty
     }
     
     func reload() {
