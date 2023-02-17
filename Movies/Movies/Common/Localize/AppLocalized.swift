@@ -32,4 +32,5 @@ struct AppLocalized {
     static let cancelActionTitle = "Cancel"
     
     static let errorTitle = "Error"
+    static let headerSectionTitle = "Favorite Shows"
 }

@@ -92,7 +92,7 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: Profile_PresenterToViewProtocol {
 }
 
-extension ProfileViewController: UICollectionViewDataSource {
+extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -108,6 +108,32 @@ extension ProfileViewController: UICollectionViewDataSource {
         
         cell.configData(itemData: MovieViewModel(imageUrl: URL(string: ""), title: "Pelicula", date: "Ago 27, 2016", score: "5.5", description: "hjahsiodhaiouehuiohshfjahjfhksajhjhfj"))
         return cell
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
+        guard
+            kind == UICollectionView.elementKindSectionHeader,
+            let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseIdentifier, for: indexPath) as? SectionHeader
+        else {
+            return UICollectionReusableView()
+        }
+        
+        sectionHeader.config(
+            text: AppLocalized.headerSectionTitle,
+            textColor: Colors.defaultLabel)
+        return sectionHeader
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        referenceSizeForHeaderInSection section: Int
+    ) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 40)
     }
 }
 

@@ -70,6 +70,7 @@
 		79DE7625299F5C480069F1CC /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7620299F5C480069F1CC /* ProfileProtocols.swift */; };
 		79DE7626299F5C480069F1CC /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7621299F5C480069F1CC /* ProfileInteractor.swift */; };
 		79DE7628299F65B90069F1CC /* MoviesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7627299F65B90069F1CC /* MoviesCollectionView.swift */; };
+		79DE762A299F6E720069F1CC /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7629299F6E720069F1CC /* SectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		79DE7620299F5C480069F1CC /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		79DE7621299F5C480069F1CC /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		79DE7627299F65B90069F1CC /* MoviesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionView.swift; sourceTree = "<group>"; };
+		79DE7629299F6E720069F1CC /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +392,7 @@
 				79DE7601299EDD700069F1CC /* Protocols */,
 				7900FD47299D866900381D8C /* LoginTextField.swift */,
 				79DE7627299F65B90069F1CC /* MoviesCollectionView.swift */,
+				79DE7629299F6E720069F1CC /* SectionHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				7900FD21299D4C3400381D8C /* HttpResponseStatus.swift in Sources */,
 				79DE7607299F0F680069F1CC /* UILabelExtension.swift in Sources */,
 				7900FCE1299D390D00381D8C /* SceneDelegate.swift in Sources */,
+				79DE762A299F6E720069F1CC /* SectionHeader.swift in Sources */,
 				79DE7626299F5C480069F1CC /* ProfileInteractor.swift in Sources */,
 				79DE7628299F65B90069F1CC /* MoviesCollectionView.swift in Sources */,
 				7900FD30299D608C00381D8C /* PopularMovieEntity.swift in Sources */,

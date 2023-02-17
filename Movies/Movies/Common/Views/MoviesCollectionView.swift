@@ -31,6 +31,7 @@ class MoviesCollectionView: UICollectionView {
     
     private func config() {
         register(ItemMoviesListCell.self, forCellWithReuseIdentifier: ItemMoviesListCell.reuseIdentifier)
+        register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
         backgroundColor = .clear
     }
 }
