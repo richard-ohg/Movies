@@ -60,6 +60,7 @@
 		79DE760E299F27F60069F1CC /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE760D299F27F60069F1CC /* DoubleExtension.swift */; };
 		79DE7611299F36530069F1CC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 79DE7610299F36530069F1CC /* Kingfisher */; };
 		79DE7613299F3CFC0069F1CC /* MessageDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7612299F3CFC0069F1CC /* MessageDisplayable.swift */; };
+		79DE7615299F437E0069F1CC /* MoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7614299F437E0069F1CC /* MoviesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		79DE760B299F19730069F1CC /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		79DE760D299F27F60069F1CC /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		79DE7612299F3CFC0069F1CC /* MessageDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayable.swift; sourceTree = "<group>"; };
+		79DE7614299F437E0069F1CC /* MoviesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +428,7 @@
 				79DE7600299ED7F80069F1CC /* Extensions */,
 				79DE75FF299ED7E60069F1CC /* Cell */,
 				79DE75F2299EBED20069F1CC /* MoviesListViewController.swift */,
+				79DE7614299F437E0069F1CC /* MoviesListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				7900FD41299D761800381D8C /* AppLocalized.swift in Sources */,
 				7900FD5B299DFEA200381D8C /* AuthenticationFirebaseService.swift in Sources */,
 				79DE75E7299EA1510069F1CC /* LoginViewController+Login_PresenterToViewProtocol.swift in Sources */,
+				79DE7615299F437E0069F1CC /* MoviesListView.swift in Sources */,
 				7900FD28299D4CD700381D8C /* ApiClientServiceProtocol.swift in Sources */,
 				7900FD5E299E005400381D8C /* User.swift in Sources */,
 				7900FD37299D64A800381D8C /* Path.swift in Sources */,

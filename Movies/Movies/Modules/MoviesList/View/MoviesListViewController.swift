@@ -9,28 +9,19 @@
 import UIKit
 
 class MoviesListViewController: UIViewController {
-    
-    private lazy var segmentedControl: UISegmentedControl = {
-        let segControl = UISegmentedControl(items: ViewValues.itemsSegmentedControl)
-        segControl.selectedSegmentIndex = ViewValues.selectedSegmentIndexSegmentedControl
-        segControl.backgroundColor = Colors.backgroundColorSegmentedControl
-        segControl.selectedSegmentTintColor = Colors.selectedSegmentTintColorSegmentedControl
-        segControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
-        return segControl
-    }()
-    
-    private lazy var collectionView: UICollectionView = {
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: makeLayout())
-        collection.register(ItemMoviesListCell.self, forCellWithReuseIdentifier: ItemMoviesListCell.reuseIdentifier)
-        collection.backgroundColor = .clear
-        collection.delegate = self
-        collection.dataSource = self
-        return collection
-    }()
 
     var presenter: MoviesList_ViewToPresenterProtocol?
+    
+    lazy var movieListView = {
+        return MoviesListView(delegate: self)
+    }()
 
     // MARK: Lifecycle
+    override func loadView() {
+        super.loadView()
+        self.view = movieListView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -39,31 +30,7 @@ class MoviesListViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = Colors.backgroundColorMoviesListView
-        
-        setupSegmentedControl()
         setupNavigation()
-        
-        view.add(subviews: segmentedControl, collectionView)
-        segmentedControl.setConstraints(
-            top: view.layoutMarginsGuide.topAnchor,
-            trailing: view.trailingAnchor,
-            leading: view.leadingAnchor,
-            pTop: ViewValues.segmentedControlPadding,
-            pTrailing: ViewValues.segmentedControlPadding,
-            pLeading: ViewValues.segmentedControlPadding)
-        
-        collectionView.setConstraints(
-            top: segmentedControl.bottomAnchor,
-            trailing: view.trailingAnchor,
-            bottom: view.bottomAnchor,
-            leading: view.leadingAnchor,
-            pTop: ViewValues.collectionViewTopAnchor)
-    }
-    
-    private func setupSegmentedControl() {
-        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .normal)
-        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
     }
     
     private func setupNavigation() {
@@ -97,25 +64,6 @@ class MoviesListViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: righButton)
     }
     
-    private func makeLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewFlowLayout()
-        let itemWidth = (ViewValues.widthScreen - ViewValues.doubleCollectionPadding) / ViewValues.multiplierTwo
-        layout.itemSize = CGSize(width: itemWidth, height: ViewValues.movieItemHeight)
-        layout.minimumLineSpacing = .zero
-        layout.minimumInteritemSpacing = .zero
-        layout.sectionInset = UIEdgeInsets(
-            top: .zero,
-            left: ViewValues.normalCollectionPadding,
-            bottom: .zero,
-            right: ViewValues.normalCollectionPadding
-        )
-        return layout
-    }
-    
-    @objc func segmentedValueChanged(_ sender: UISegmentedControl) {
-        print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
-    }
-    
     @objc func showMenu() {
         let profileAction = UIAlertAction(title: AppLocalized.profileActionTitle, style: .default)
         let logoutAction = UIAlertAction(title: AppLocalized.logoutActionTitle, style: .destructive)
@@ -134,7 +82,7 @@ extension MoviesListViewController: MoviesList_PresenterToViewProtocol {
     
     func update() {
         DispatchQueue.main.async {
-            self.collectionView.reloadData()            
+            self.movieListView.reload()
         }
     }
     
@@ -164,3 +112,7 @@ extension MoviesListViewController: UICollectionViewDataSource {
 
 extension MoviesListViewController: UICollectionViewDelegate {}
 extension MoviesListViewController: MessageDisplayable {}
+
+extension MoviesListViewController: MoviesListViewDelegate {
+    
+}
