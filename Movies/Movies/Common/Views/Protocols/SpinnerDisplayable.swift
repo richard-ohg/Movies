@@ -29,8 +29,10 @@ extension SpinnerDisplayable where Self : UIViewController {
     }
     
     func hideSpinner(){
-        if let foundView = parentView.viewWithTag(ViewValues.tagIdentifierSpinner) {
-            foundView.removeFromSuperview()
+        DispatchQueue.main.async {
+            if let foundView = self.parentView.viewWithTag(ViewValues.tagIdentifierSpinner) {
+                foundView.removeFromSuperview()
+            }
         }
     }
     
