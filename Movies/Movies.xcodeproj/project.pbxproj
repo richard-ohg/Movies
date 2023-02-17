@@ -79,6 +79,8 @@
 		79DE7639299F7A790069F1CC /* MovieDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7634299F7A790069F1CC /* MovieDetailInteractor.swift */; };
 		79DE763C299F7C8C0069F1CC /* GenresEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE763B299F7C8C0069F1CC /* GenresEntity.swift */; };
 		79DE763E299F7D9D0069F1CC /* MovieDetailResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE763D299F7D9D0069F1CC /* MovieDetailResponseEntity.swift */; };
+		79DE7641299F8C0F0069F1CC /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE7640299F8C0E0069F1CC /* MovieDetailView.swift */; };
+		79E5EF22299FFA6100C6157B /* ItemMovieDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF21299FFA6100C6157B /* ItemMovieDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +166,8 @@
 		79DE7634299F7A790069F1CC /* MovieDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailInteractor.swift; sourceTree = "<group>"; };
 		79DE763B299F7C8C0069F1CC /* GenresEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresEntity.swift; sourceTree = "<group>"; };
 		79DE763D299F7D9D0069F1CC /* MovieDetailResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailResponseEntity.swift; sourceTree = "<group>"; };
+		79DE7640299F8C0E0069F1CC /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		79E5EF21299FFA6100C6157B /* ItemMovieDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMovieDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -542,8 +546,8 @@
 		79DE762F299F7A5B0069F1CC /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
+				79DE763F299F8B780069F1CC /* View */,
 				79DE7633299F7A790069F1CC /* MovieDetailProtocols.swift */,
-				79DE7632299F7A790069F1CC /* MovieDetailViewController.swift */,
 				79DE7630299F7A790069F1CC /* MovieDetailPresenter.swift */,
 				79DE7634299F7A790069F1CC /* MovieDetailInteractor.swift */,
 				79DE7631299F7A790069F1CC /* MovieDetailRouter.swift */,
@@ -559,6 +563,24 @@
 				79DE763D299F7D9D0069F1CC /* MovieDetailResponseEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		79DE763F299F8B780069F1CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79E5EF20299FFA3A00C6157B /* Cell */,
+				79DE7632299F7A790069F1CC /* MovieDetailViewController.swift */,
+				79DE7640299F8C0E0069F1CC /* MovieDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79E5EF20299FFA3A00C6157B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79E5EF21299FFA6100C6157B /* ItemMovieDetailCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -693,6 +715,7 @@
 				79DE75FB299EC5600069F1CC /* UIColorExtension.swift in Sources */,
 				79DE7637299F7A790069F1CC /* MovieDetailViewController.swift in Sources */,
 				79DE7639299F7A790069F1CC /* MovieDetailInteractor.swift in Sources */,
+				79DE7641299F8C0F0069F1CC /* MovieDetailView.swift in Sources */,
 				79DE75F7299EBED20069F1CC /* MoviesListViewController.swift in Sources */,
 				79DE762E299F716F0069F1CC /* ProfileView.swift in Sources */,
 				7900FD59299DFDDF00381D8C /* AuthenticationFirebaseServiceProtocol.swift in Sources */,
@@ -720,6 +743,7 @@
 				79DE75E7299EA1510069F1CC /* LoginViewController+Login_PresenterToViewProtocol.swift in Sources */,
 				79DE7615299F437E0069F1CC /* MoviesListView.swift in Sources */,
 				7900FD28299D4CD700381D8C /* ApiClientServiceProtocol.swift in Sources */,
+				79E5EF22299FFA6100C6157B /* ItemMovieDetailCell.swift in Sources */,
 				7900FD5E299E005400381D8C /* User.swift in Sources */,
 				7900FD37299D64A800381D8C /* Path.swift in Sources */,
 				7900FD24299D4C5900381D8C /* ApiError.swift in Sources */,

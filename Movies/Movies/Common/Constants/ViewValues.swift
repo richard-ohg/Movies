@@ -89,4 +89,6 @@ struct ViewValues {
     
     static let profileCollectionViewTop: CGFloat = 40
     
+    static let gradientTitleInit: NSNumber = 0.6
+    static let gradientTitleEnd: NSNumber = 0.9
 }
