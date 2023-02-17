@@ -50,7 +50,7 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             return UICollectionViewCell()
         }
         
-        cell.configData(itemData: MovieViewModel(imageUrl: URL(string: ""), title: "Pelicula", date: "Ago 27, 2016", score: "5.5", description: "hjahsiodhaiouehuiohshfjahjfhksajhjhfj"))
+        cell.configData(itemData: .test)
         return cell
     }
     
