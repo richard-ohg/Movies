@@ -32,4 +32,8 @@ extension MoviesListViewController: UICollectionViewDataSource {
     }
 }
 
-extension MoviesListViewController: UICollectionViewDelegate {}
+extension MoviesListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.didSelectItem(with: indexPath)
+    }
+}

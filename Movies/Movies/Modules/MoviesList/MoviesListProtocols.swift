@@ -20,6 +20,7 @@ protocol MoviesList_ViewToPresenterProtocol: AnyObject {
     func getItem(indexPath: IndexPath) -> MovieViewModel
     func logout()
     func showProfile()
+    func didSelectItem(with indexPath: IndexPath)
 }
 
 // MARK: PRESENTER -> INTERACTOR
@@ -50,4 +51,5 @@ protocol MoviesList_PresenterToViewProtocol: SpinnerDisplayable, AnyObject {
 protocol MoviesList_PresenterToRouterProtocol: AnyObject {
     func goToLogin()
     func goToProfile()
+    func goToMovieDetail(with id: Int)
 }

@@ -38,6 +38,11 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
     func showProfile() {
         router?.goToProfile()
     }
+    
+    func didSelectItem(with indexPath: IndexPath) {
+        let movie = popularMoviesViewModel[indexPath.row]
+        router?.goToMovieDetail(with: movie.id)
+    }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
