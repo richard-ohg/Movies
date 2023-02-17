@@ -15,6 +15,8 @@ class MovieDetailViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
+        presenter?.viewDidLoad()
     }
 }
 

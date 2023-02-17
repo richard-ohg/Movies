@@ -39,4 +39,9 @@ extension MoviesListRouter: MoviesList_PresenterToRouterProtocol {
         let profileViewController = ProfileRouter.createModule()
         view?.present(profileViewController, animated: true)
     }
+    
+    func goToMovieDetail(with id: Int) {
+        let profileViewController = MovieDetailRouter.createModule(movieId: id)
+        view?.present(profileViewController, animated: true)
+    }
 }

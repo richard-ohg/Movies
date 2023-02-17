@@ -14,8 +14,14 @@ class MovieDetailPresenter: MovieDetail_ViewToPresenterProtocol {
     var interactor: MovieDetail_PresenterToInteractorProtocol?
     var router: MovieDetail_PresenterToRouterProtocol?
     
-    func fetchMovieDetail(with id: Int) {
-        interactor?.fetchMovieDetail(with: id)
+    private let movieId: Int
+    
+    init(movieId: Int) {
+        self.movieId = movieId
+    }
+    
+    func viewDidLoad() {
+        interactor?.fetchMovieDetail(with: movieId)
     }
 }
 

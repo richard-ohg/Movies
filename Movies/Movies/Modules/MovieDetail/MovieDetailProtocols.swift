@@ -14,7 +14,7 @@ protocol MovieDetail_ViewToPresenterProtocol: AnyObject {
 	var interactor: MovieDetail_PresenterToInteractorProtocol? { get set }
 	var router: MovieDetail_PresenterToRouterProtocol? { get set }
 
-    func fetchMovieDetail(with id: Int)
+    func viewDidLoad()
 }
 
 // MARK: PRESENTER -> INTERACTOR
