@@ -29,21 +29,21 @@ final class ItemMoviesListCell: UICollectionViewCell {
     
     private let titleImageLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.defaultLabelOfMovies
+        label.textColor = Colors.defaultLabel
         label.font = UIFont.boldSystemFont(ofSize: ViewValues.defaultMovieLabelFontSize)
         return label
     }()
     
     private let dateMovieLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.defaultLabelOfMovies
+        label.textColor = Colors.defaultLabel
         label.font = UIFont.boldSystemFont(ofSize: ViewValues.defaultMovieLabelFontSize)
         return label
     }()
     
     private let scoreMovieLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.defaultLabelOfMovies
+        label.textColor = Colors.defaultLabel
         label.font = UIFont.boldSystemFont(ofSize: ViewValues.defaultMovieLabelFontSize)
         return label
     }()
@@ -131,7 +131,7 @@ final class ItemMoviesListCell: UICollectionViewCell {
     }
     
     private func setScore(score: String) {
-        scoreMovieLabel.set(text: score, leftIcon: UIImage(systemName: Images.scoreLabel)?.withTintColor(Colors.defaultLabelOfMovies))
+        scoreMovieLabel.set(text: score, leftIcon: UIImage(systemName: Images.scoreLabel)?.withTintColor(Colors.defaultLabel))
     }
     
 }
