@@ -17,25 +17,23 @@ final class MovieDetailView: UIView {
     private let movieImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.setHeightConstraint(with: 250)
-        imageView.setWidthConstraint(with: 150)
-        imageView.setCornerRadius(withValue: 10)
+        imageView.setHeightConstraint(with: ViewValues.movieDetailImageHeight)
+        imageView.setWidthConstraint(with: ViewValues.movieDetailImageWidth)
+        imageView.setCornerRadius(withValue: ViewValues.movieDetailImageCornerRadius)
         imageView.image = UIImage(named: Images.placeholderMovieImage)
         return imageView
     }()
     
     private let movieTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        label.font = UIFont.systemFont(ofSize: ViewValues.movieDetailTitleFontSize, weight: .heavy)
         label.textColor = Colors.defaultLabel
         label.numberOfLines = 0
-        label.text = "Black Panther"
         return label
     }()
     
     private let categoryButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
-        configuration.title = "B"
         let button = UIButton()
         button.tintColor = .gray
         button.configuration = configuration
@@ -44,7 +42,6 @@ final class MovieDetailView: UIView {
     
     private let durationButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
-        configuration.title = "125 min"
         let button = UIButton()
         button.tintColor = .red
         button.configuration = configuration
@@ -53,7 +50,6 @@ final class MovieDetailView: UIView {
     
     private let languageButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
-        configuration.title = "ESP"
         let button = UIButton()
         button.tintColor = .blue
         button.configuration = configuration
@@ -62,7 +58,6 @@ final class MovieDetailView: UIView {
     
     private let genresButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
-        configuration.title = "Aventura, ciencia ficción, aventura"
         let button = UIButton()
         button.tintColor = .darkGray
         button.configuration = configuration
@@ -73,7 +68,6 @@ final class MovieDetailView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: ViewValues.defaultMovieLabelFontSize)
-        label.text = "Ago 24, 2016"
         label.textAlignment = .center
         return label
     }()
@@ -82,7 +76,6 @@ final class MovieDetailView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: ViewValues.defaultMovieLabelFontSize)
-        label.set(text: "5.5", leftIcon: UIImage(systemName: Images.scoreLabel)?.withTintColor(.white))
         return label
     }()
     
@@ -90,14 +83,13 @@ final class MovieDetailView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: ViewValues.defaultMovieLabelFontSize)
-        label.text = "12455 votes"
         return label
     }()
     
     private let collectionTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = Colors.defaultLabel
-        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.font = UIFont.boldSystemFont(ofSize: ViewValues.movieDetailCollectionTitleFontSize)
         label.text = AppLocalized.headerMovieDetailSectionTitle
         return label
     }()
@@ -151,81 +143,81 @@ final class MovieDetailView: UIView {
         movieImageView.setConstraints(
             top: layoutMarginsGuide.topAnchor,
             leading: leadingAnchor,
-            pTop: 30,
-            pLeading: 20)
+            pTop: ViewValues.movieDetailImageViewTop,
+            pLeading: ViewValues.movieDetailImageViewLeading)
         
         movieTitleLabel.setConstraints(
             top: movieImageView.topAnchor,
             trailing: trailingAnchor,
             leading: movieImageView.trailingAnchor,
-            pTop: 10,
-            pTrailing: 20,
-            pLeading: 20)
+            pTop: ViewValues.movieDetailTitleLabelTop,
+            pTrailing: ViewValues.movieDetailTitleLabelTrailingLeading,
+            pLeading: ViewValues.movieDetailTitleLabelTrailingLeading)
         
         categoryButton.setConstraints(
             top: movieTitleLabel.bottomAnchor,
             leading: movieImageView.trailingAnchor,
-            pTop: 10,
-            pLeading: 20)
+            pTop: ViewValues.categoryButtonTop,
+            pLeading: ViewValues.categoryButtonLeading)
         
         durationButton.setConstraints(
             leading: categoryButton.trailingAnchor,
-            pLeading: 5)
+            pLeading: ViewValues.durationButtonLeading)
         durationButton.centerYAnchor.constraint(equalTo: categoryButton.centerYAnchor).isActive = true
         
         languageButton.setConstraints(
             leading: durationButton.trailingAnchor,
-            pLeading: 5)
+            pLeading: ViewValues.languageButtonLeading)
         languageButton.centerYAnchor.constraint(equalTo: categoryButton.centerYAnchor).isActive = true
-        languageButton.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -5).isActive = true
+        languageButton.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: ViewValues.languageButtonTrailing).isActive = true
         
         genresButton.setConstraints(
             top: categoryButton.bottomAnchor,
             trailing: trailingAnchor,
             leading: movieImageView.trailingAnchor,
-            pTop: 10,
-            pTrailing: 10,
-            pLeading: 10)
+            pTop: ViewValues.genresButtonTop,
+            pTrailing: ViewValues.genresButtonTrailingLeading,
+            pLeading: ViewValues.genresButtonTrailingLeading)
         
         dateLabel.setConstraints(
             top: genresButton.bottomAnchor,
             trailing: trailingAnchor,
             leading: movieImageView.trailingAnchor,
-            pTop: 15,
-            pTrailing: 20,
-            pLeading: 20)
+            pTop: ViewValues.dateLabelTop,
+            pTrailing: ViewValues.dateLabelTrailingLeading,
+            pLeading: ViewValues.dateLabelTrailingLeading)
         
         scoreMovieLabel.setConstraints(
             top: dateLabel.bottomAnchor,
             leading: movieImageView.trailingAnchor,
-            pTop: 20,
-            pLeading: 20)
+            pTop: ViewValues.scoreMovieDetailLabelTop,
+            pLeading: ViewValues.scoreMoviedetailLabelLeading)
         
         votesCountLabel.setConstraints(
             leading: scoreMovieLabel.trailingAnchor,
-            pLeading: 20)
+            pLeading: ViewValues.votesCountLabelLeading)
         votesCountLabel.centerYAnchor.constraint(equalTo: scoreMovieLabel.centerYAnchor).isActive = true
         
         collectionTitleLabel.setConstraints(
             top: movieImageView.bottomAnchor,
             leading: leadingAnchor,
-            pTop: 30,
-            pLeading: 20)
+            pTop: ViewValues.collectionTitleDetailLabelTop,
+            pLeading: ViewValues.collectionTitleDetailLabelLeading)
         
         productionCompaniesCollectionView.setConstraints(
             top: collectionTitleLabel.bottomAnchor,
             trailing: trailingAnchor,
             bottom: bottomAnchor,
             leading: leadingAnchor,
-            pTrailing: 10,
-            pBottom: 20,
-            pLeading: 10)
+            pTrailing: ViewValues.productionCompaniesCollectionViewTrailing,
+            pBottom: ViewValues.productionCompaniesCollectionViewBottom,
+            pLeading: ViewValues.productionCompaniesCollectionViewLeading)
     }
     
     private func makeLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         let itemWidth = ViewValues.widthScreen
-        layout.itemSize = CGSize(width: itemWidth, height: 300)
+        layout.itemSize = CGSize(width: itemWidth, height: ViewValues.movieDetailItemHeight)
         layout.minimumLineSpacing = .zero
         layout.minimumInteritemSpacing = .zero
         layout.scrollDirection = .horizontal

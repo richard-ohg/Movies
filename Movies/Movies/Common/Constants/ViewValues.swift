@@ -91,4 +91,47 @@ struct ViewValues {
     
     static let gradientTitleInit: NSNumber = 0.6
     static let gradientTitleEnd: NSNumber = 0.9
+    
+    static let movieDetailImageHeight: CGFloat = 250
+    static let movieDetailImageWidth: CGFloat = 150
+    static let movieDetailImageCornerRadius: CGFloat = 10
+    
+    static let movieDetailTitleFontSize: CGFloat = 20
+    static let movieDetailCollectionTitleFontSize: CGFloat = 25
+    
+    static let movieDetailImageViewTop: CGFloat = 30
+    static let movieDetailImageViewLeading: CGFloat = 20
+    
+    static let movieDetailTitleLabelTop: CGFloat = 10
+    static let movieDetailTitleLabelTrailingLeading: CGFloat = 20
+    
+    static let categoryButtonTop: CGFloat = 10
+    static let categoryButtonLeading: CGFloat = 20
+    
+    static let durationButtonLeading: CGFloat = 5
+    
+    static let languageButtonLeading: CGFloat = 5
+    static let languageButtonTrailing: CGFloat = -5
+    
+    static let genresButtonTop: CGFloat = 10
+    static let genresButtonTrailingLeading: CGFloat = 20
+    
+    static let dateLabelTop: CGFloat = 15
+    static let dateLabelTrailingLeading: CGFloat = 20
+    
+    static let scoreMovieDetailLabelTop: CGFloat = 20
+    static let scoreMoviedetailLabelLeading: CGFloat = 20
+    
+    static let votesCountLabelLeading: CGFloat = 20
+    
+    static let collectionTitleDetailLabelTop: CGFloat = 30
+    static let collectionTitleDetailLabelLeading: CGFloat = 20
+    
+    static let productionCompaniesCollectionViewTrailing: CGFloat = 10
+    static let productionCompaniesCollectionViewLeading: CGFloat = 10
+    static let productionCompaniesCollectionViewBottom: CGFloat = 20
+    
+    static let movieDetailItemHeight: CGFloat = 300
+    
+    
 }
