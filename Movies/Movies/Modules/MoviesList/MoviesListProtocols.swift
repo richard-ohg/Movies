@@ -29,6 +29,8 @@ protocol MoviesList_PresenterToInteractorProtocol: AnyObject {
     
     func fetchPopularMovies()
     func fetchTopRatedMovies()
+    func fetchOnTVMovies()
+//    func fetchAiringMovies()
     func logout()
 }
 
@@ -37,7 +39,7 @@ protocol MoviesList_InteractorToPresenterProtocol: AnyObject {
     
     func didFetchPopularMovies(result: GenericMovieResponseEntity<GenericMovieEntity>)
     func didFetchTopRatedMovies(result: GenericMovieResponseEntity<GenericMovieEntity>)
-//    func didFetchOnTVMovies(result: GenericMovieResponseEntity<GenericMovieEntity>)
+    func didFetchOnTVMovies(result: GenericMovieResponseEntity<OnTVMoviesEntity>)
 //    func didFetchAiringMovies(result: GenericMovieResponseEntity<GenericMovieEntity>)
     func showError(error: Error)
     func successLogout()

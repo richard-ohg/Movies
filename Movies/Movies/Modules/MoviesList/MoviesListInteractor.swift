@@ -35,6 +35,18 @@ class MoviesListInteractor: MoviesList_PresenterToInteractorProtocol {
         }
     }
     
+    func fetchOnTVMovies() {
+        Task {
+            let result = await RequestManager.shared.fetchMoviesOnTV()
+            switch result {
+            case .success(let response):
+                presenter?.didFetchOnTVMovies(result: response)
+            case .failure(let error):
+                presenter?.showError(error: error)
+            }
+        }
+    }
+    
     func logout() {
         do {
             try RequestManager.shared.logout()

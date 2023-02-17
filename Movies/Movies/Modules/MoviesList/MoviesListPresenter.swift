@@ -28,7 +28,7 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
         case .topRated:
             return moviesContainer.topRatedMovies.count
         case .onTV:
-            return 1
+            return moviesContainer.onTVMovies.count
         case .airing:
             return 1
         }
@@ -44,7 +44,7 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
         case .topRated:
             return moviesContainer.topRatedMovies[indexPath.row]
         case .onTV:
-            break
+            return moviesContainer.onTVMovies[indexPath.row]
         case .airing:
             break
         }
@@ -77,7 +77,7 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
         case .topRated:
             movieId = moviesContainer.topRatedMovies[indexPath.row].id
         case .onTV:
-            break
+            movieId = moviesContainer.onTVMovies[indexPath.row].id
         case .airing:
             break
         }
@@ -86,7 +86,6 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
     }
     
     func segmentedValueChanged(section: Int) {
-        print("Selected Segment Index is : \(section)")
         lastSelectedSegmentedIndex = section
         guard let section = SegmentedSection(rawValue: section) else { return }
         
@@ -106,7 +105,12 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
                 view?.update()
             }
         case .onTV:
-            break
+            if moviesContainer.onTVMovies.isEmpty {
+                view?.showSpinner()
+                interactor?.fetchOnTVMovies()
+            } else {
+                view?.update()
+            }
         case .airing:
             break
         }
@@ -126,6 +130,14 @@ extension MoviesListPresenter: MoviesList_InteractorToPresenterProtocol {
     
     func didFetchTopRatedMovies(result: GenericMovieResponseEntity<GenericMovieEntity>) {
         moviesContainer.topRatedMovies = result.results.map(mapper.map(entity:))
+        view?.update()
+        DispatchQueue.main.async {
+            self.view?.hideSpinner()
+        }
+    }
+    
+    func didFetchOnTVMovies(result: GenericMovieResponseEntity<OnTVMoviesEntity>) {
+        moviesContainer.onTVMovies = result.results.map(mapper.map(entity:))
         view?.update()
         DispatchQueue.main.async {
             self.view?.hideSpinner()
