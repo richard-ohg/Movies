@@ -136,7 +136,7 @@ extension MoviesListPresenter: MoviesList_InteractorToPresenterProtocol {
         }
     }
     
-    func didFetchOnTVMovies(result: GenericMovieResponseEntity<OnTVMoviesEntity>) {
+    func didFetchOnTVMovies(result: GenericMovieResponseEntity<GenericTVMoviesEntity>) {
         moviesContainer.onTVMovies = result.results.map(mapper.map(entity:))
         view?.update()
         DispatchQueue.main.async {

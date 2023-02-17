@@ -1,5 +1,5 @@
 //
-//  OnTVMoviesEntity.swift
+//  GenericTVMoviesEntity.swift
 //  Movies
 //
 //  Created by Ricardo Omar Hernández on 17/02/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OnTVMoviesEntity: MovieProtocol {
+struct GenericTVMoviesEntity: MovieProtocol {
     var id: Int
     var title: String
     var overview: String
