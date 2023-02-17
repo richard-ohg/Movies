@@ -1,5 +1,5 @@
 //
-//  PopularMovieEntity.swift
+//  GenericMovieEntity.swift
 //  Movies
 //
 //  Created by Ricardo Omar Hernández on 15/02/23.
@@ -28,7 +28,7 @@ import Foundation
 //    "vote_average": 5.91
 //}
 
-struct PopularMovieEntity: Decodable {
+struct GenericMovieEntity: MovieProtocol {
     var id: Int
     var title: String
     var overview: String
