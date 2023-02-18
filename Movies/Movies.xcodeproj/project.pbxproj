@@ -93,6 +93,7 @@
 		79E5EF3729A0277800C6157B /* SegmentedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3629A0277800C6157B /* SegmentedSection.swift */; };
 		79E5EF3929A0478F00C6157B /* GenericTVMoviesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3829A0478F00C6157B /* GenericTVMoviesEntity.swift */; };
 		79E5EF3B29A04FF600C6157B /* TVDetailResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3A29A04FF600C6157B /* TVDetailResponseEntity.swift */; };
+		79E5EF3F29A056C200C6157B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3E29A056C200C6157B /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +193,7 @@
 		79E5EF3629A0277800C6157B /* SegmentedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedSection.swift; sourceTree = "<group>"; };
 		79E5EF3829A0478F00C6157B /* GenericTVMoviesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTVMoviesEntity.swift; sourceTree = "<group>"; };
 		79E5EF3A29A04FF600C6157B /* TVDetailResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetailResponseEntity.swift; sourceTree = "<group>"; };
+		79E5EF3E29A056C200C6157B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,6 +460,7 @@
 		7900FD5C299E004B00381D8C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				79E5EF3E29A056C200C6157B /* Environment.swift */,
 				7900FD5D299E005400381D8C /* User.swift */,
 			);
 			path = Entities;
@@ -808,6 +811,7 @@
 				79DE7619299F47CF0069F1CC /* MoviesListViewController+CollectionView.swift in Sources */,
 				7900FD48299D866900381D8C /* LoginTextField.swift in Sources */,
 				79DE75F5299EBED20069F1CC /* MoviesListPresenter.swift in Sources */,
+				79E5EF3F29A056C200C6157B /* Environment.swift in Sources */,
 				7900FD1B299D463B00381D8C /* LoginRouter.swift in Sources */,
 				7900FD21299D4C3400381D8C /* HttpResponseStatus.swift in Sources */,
 				79DE7607299F0F680069F1CC /* UILabelExtension.swift in Sources */,
