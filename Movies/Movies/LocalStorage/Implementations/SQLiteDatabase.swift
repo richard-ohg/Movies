@@ -10,7 +10,7 @@ import SQLite3
 class SQLiteDatabase {
     private let dbPointer: OpaquePointer?
     
-    fileprivate var errorMessage: String {
+    var errorMessage: String {
         if let errorPointer = sqlite3_errmsg(dbPointer) {
             let errorMessage = String(cString: errorPointer)
             return errorMessage
@@ -19,7 +19,7 @@ class SQLiteDatabase {
         }
     }
     
-    private init(dbPointer: OpaquePointer?) {
+    init(dbPointer: OpaquePointer?) {
         self.dbPointer = dbPointer
     }
     
@@ -57,5 +57,21 @@ extension SQLiteDatabase {
             throw SQLiteError.Prepare(message: errorMessage)
         }
         return statement
+    }
+}
+
+extension SQLiteDatabase {
+    func createTable(table: SQLTable.Type) throws {
+        let createTableStatement = try prepareStatement(sql: table.createStatement)
+        
+        defer {
+            sqlite3_finalize(createTableStatement)
+        }
+        
+        guard sqlite3_step(createTableStatement) == SQLITE_DONE else {
+            throw SQLiteError.Step(message: errorMessage)
+        }
+        
+        print("\(table) table created.")
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SQLTable {
-  static var createStatement: String { get }
+    static var createStatement: String { get }
 }

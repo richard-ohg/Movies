@@ -12,13 +12,21 @@ class DataBaseManager: DataBaseManagerProtocol {
     
     var db: SQLiteDatabase?
     
-    init(nameDB: String) {
+    func openDB(nameDB: String) {
         do {
             let path = try getPath(nameDB: nameDB)
             db = try SQLiteDatabase.open(path: path)
             print("Successfully opened connection to database.")
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    
+    func createTable(object: SQLTable.Type) {
+        do {
+            try db?.createTable(table: object.self)
+        } catch {
+            print(db?.errorMessage)
         }
     }
     
