@@ -30,7 +30,7 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
         case .onTV:
             return moviesContainer.onTVMovies.count
         case .airing:
-            return 1
+            return moviesContainer.airingMovies.count
         }
     }
     
@@ -46,9 +46,8 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
         case .onTV:
             return moviesContainer.onTVMovies[indexPath.row]
         case .airing:
-            break
+            return moviesContainer.airingMovies[indexPath.row]
         }
-        return moviesContainer.popularMoviesViewModel[indexPath.row]
     }
     
     func viewDidLoad() {
@@ -79,7 +78,7 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
         case .onTV:
             movieId = moviesContainer.onTVMovies[indexPath.row].id
         case .airing:
-            break
+            movieId = moviesContainer.airingMovies[indexPath.row].id
         }
         
         router?.goToMovieDetail(with: movieId)
@@ -112,7 +111,12 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
                 view?.update()
             }
         case .airing:
-            break
+            if moviesContainer.airingMovies.isEmpty {
+                view?.showSpinner()
+                interactor?.fetchAiringMovies()
+            } else {
+                view?.update()
+            }
         }
     }
 }
@@ -138,6 +142,14 @@ extension MoviesListPresenter: MoviesList_InteractorToPresenterProtocol {
     
     func didFetchOnTVMovies(result: GenericMovieResponseEntity<GenericTVMoviesEntity>) {
         moviesContainer.onTVMovies = result.results.map(mapper.map(entity:))
+        view?.update()
+        DispatchQueue.main.async {
+            self.view?.hideSpinner()
+        }
+    }
+    
+    func didFetchAiringMovies(result: GenericMovieResponseEntity<GenericTVMoviesEntity>) {
+        moviesContainer.airingMovies = result.results.map(mapper.map(entity:))
         view?.update()
         DispatchQueue.main.async {
             self.view?.hideSpinner()

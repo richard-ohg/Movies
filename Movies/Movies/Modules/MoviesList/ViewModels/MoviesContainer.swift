@@ -11,4 +11,5 @@ struct MoviesContainer {
     var popularMoviesViewModel: [MovieViewModel] = []
     var topRatedMovies: [MovieViewModel] = []
     var onTVMovies: [MovieViewModel] = []
+    var airingMovies: [MovieViewModel] = []
 }
