@@ -12,6 +12,7 @@ enum Path {
     case empty
     case popularMovies
     case movieDetail(Int)
+    case tvDetail(Int)
     case topRated
     case onTV
     case airing
@@ -26,6 +27,8 @@ enum Path {
             return "/3/movie/popular"
         case .movieDetail(let movieId):
             return "/3/movie/\(movieId)"
+        case .tvDetail(let tvId):
+            return "/3/tv/\(tvId)"
         case .topRated:
             return "/3/movie/top_rated"
         case .onTV:

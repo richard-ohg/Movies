@@ -86,4 +86,15 @@ class RequestManager {
             return .failure(error)
         }
     }
+    
+    func fetchTVDetail(with id: Int) async -> Result<TVDetailResponseEntity, Error> {
+        do {
+            var builder = URLBuilder()
+            builder.config(path: .tvDetail(id))
+            let apiClientResult = try await apiClient.request(url: builder.getUrl(), type: TVDetailResponseEntity.self)
+            return .success(apiClientResult)
+        } catch {
+            return .failure(error)
+        }
+    }
 }
