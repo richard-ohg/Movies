@@ -113,13 +113,12 @@ final class ItemMoviesListCell: UICollectionViewCell {
         descriptionMovieLabel.setConstraints(
             top: dateMovieLabel.bottomAnchor,
             trailing: mainContainer.trailingAnchor,
-            bottom: mainContainer.bottomAnchor,
             leading: mainContainer.leadingAnchor,
             pTop: ViewValues.descriptionMovieLabelTopBottom,
             pTrailing: ViewValues.descriptionMovieLabelLeadingTrailing,
-            pBottom: ViewValues.descriptionMovieLabelTopBottom,
             pLeading: ViewValues.descriptionMovieLabelLeadingTrailing
         )
+        descriptionMovieLabel.bottomAnchor.constraint(lessThanOrEqualTo: mainContainer.bottomAnchor, constant: -ViewValues.descriptionMovieLabelTopBottom).isActive = true
     }
     
     func configData(itemData: MovieViewModel) {
