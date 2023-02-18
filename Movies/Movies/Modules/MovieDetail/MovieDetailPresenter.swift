@@ -34,7 +34,13 @@ class MovieDetailPresenter: MovieDetail_ViewToPresenterProtocol {
     
     func viewDidLoad() {
         view?.showSpinner()
-        interactor?.fetchTVDetail(with: movieId)
+        switch environment {
+        case .movie:
+            interactor?.fetchMovieDetail(with: movieId)
+        case .tv:
+            interactor?.fetchTVDetail(with: movieId)
+            
+        }
     }
 }
 
