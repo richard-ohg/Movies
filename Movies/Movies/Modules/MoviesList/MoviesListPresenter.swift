@@ -68,20 +68,22 @@ class MoviesListPresenter: MoviesList_ViewToPresenterProtocol {
         guard let section = SegmentedSection(rawValue: lastSelectedSegmentedIndex)
         else { return }
         
-        var movieId: Int = 0
+        var id: Int = 0
         
         switch section {
         case .popularMovies:
-            movieId = moviesContainer.popularMoviesViewModel[indexPath.row].id
+            id = moviesContainer.popularMoviesViewModel[indexPath.row].id
+            router?.goToMovieDetail(with: id, environment: .movie)
         case .topRated:
-            movieId = moviesContainer.topRatedMovies[indexPath.row].id
+            id = moviesContainer.topRatedMovies[indexPath.row].id
+            router?.goToMovieDetail(with: id, environment: .movie)
         case .onTV:
-            movieId = moviesContainer.onTVMovies[indexPath.row].id
+            id = moviesContainer.onTVMovies[indexPath.row].id
+            router?.goToMovieDetail(with: id, environment: .tv)
         case .airing:
-            movieId = moviesContainer.airingMovies[indexPath.row].id
+            id = moviesContainer.airingMovies[indexPath.row].id
+            router?.goToMovieDetail(with: id, environment: .tv)
         }
-        
-        router?.goToMovieDetail(with: movieId)
     }
     
     func segmentedValueChanged(section: Int) {

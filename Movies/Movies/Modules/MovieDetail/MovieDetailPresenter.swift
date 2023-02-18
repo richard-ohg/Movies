@@ -17,13 +17,15 @@ class MovieDetailPresenter: MovieDetail_ViewToPresenterProtocol {
     let mapper: MovieDetailMapper = MovieDetailMapper()
     private var movieDetailViewModel: DetailViewModel = .empty
     private let movieId: Int
+    private let environment: Environment
     
     var productionCompaniesItemsCount: Int {
         movieDetailViewModel.productionCompanies.count
     }
     
-    init(movieId: Int) {
+    init(movieId: Int, environment: Environment) {
         self.movieId = movieId
+        self.environment = environment
     }
     
     func getItem(indexPath: IndexPath) -> ProductionCompany {

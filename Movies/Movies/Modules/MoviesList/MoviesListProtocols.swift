@@ -57,5 +57,5 @@ protocol MoviesList_PresenterToViewProtocol: SpinnerDisplayable, AnyObject {
 protocol MoviesList_PresenterToRouterProtocol: AnyObject {
     func goToLogin()
     func goToProfile()
-    func goToMovieDetail(with id: Int)
+    func goToMovieDetail(with id: Int, environment: Environment)
 }
