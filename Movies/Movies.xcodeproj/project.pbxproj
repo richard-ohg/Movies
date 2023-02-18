@@ -99,6 +99,8 @@
 		79E5EF4929A060DD00C6157B /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF4829A060DD00C6157B /* DataBaseManager.swift */; };
 		79E5EF4C29A061D500C6157B /* SQLiteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF4B29A061D500C6157B /* SQLiteError.swift */; };
 		79E5EF4E29A0638D00C6157B /* DBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF4D29A0638D00C6157B /* DBTest.swift */; };
+		79E5EF5029A06DD700C6157B /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF4F29A06DD700C6157B /* SQLiteDatabase.swift */; };
+		79E5EF5229A06E7100C6157B /* SQLTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF5129A06E7100C6157B /* SQLTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +205,8 @@
 		79E5EF4829A060DD00C6157B /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		79E5EF4B29A061D500C6157B /* SQLiteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteError.swift; sourceTree = "<group>"; };
 		79E5EF4D29A0638D00C6157B /* DBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTest.swift; sourceTree = "<group>"; };
+		79E5EF4F29A06DD700C6157B /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		79E5EF5129A06E7100C6157B /* SQLTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -656,6 +660,7 @@
 			isa = PBXGroup;
 			children = (
 				79E5EF4329A0607700C6157B /* DataBaseManagerProtocol.swift */,
+				79E5EF5129A06E7100C6157B /* SQLTable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -664,6 +669,7 @@
 			isa = PBXGroup;
 			children = (
 				79E5EF4829A060DD00C6157B /* DataBaseManager.swift */,
+				79E5EF4F29A06DD700C6157B /* SQLiteDatabase.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -819,6 +825,7 @@
 				7900FD59299DFDDF00381D8C /* AuthenticationFirebaseServiceProtocol.swift in Sources */,
 				79E5EF3129A00A1300C6157B /* IntExtension.swift in Sources */,
 				79DE7617299F478C0069F1CC /* MoviesListViewController+MoviesList_PresenterToViewProtocol.swift in Sources */,
+				79E5EF5229A06E7100C6157B /* SQLTable.swift in Sources */,
 				79E5EF2D29A0037200C6157B /* Language.swift in Sources */,
 				7900FD34299D620C00381D8C /* URLBuilder.swift in Sources */,
 				79DE763E299F7D9D0069F1CC /* MovieDetailResponseEntity.swift in Sources */,
@@ -826,6 +833,7 @@
 				79DE7622299F5C480069F1CC /* ProfilePresenter.swift in Sources */,
 				79DE75E5299EA12C0069F1CC /* LoginViewController+LoginViewDelegate.swift in Sources */,
 				79E5EF2929A000B000C6157B /* MovieDetailMapper.swift in Sources */,
+				79E5EF5029A06DD700C6157B /* SQLiteDatabase.swift in Sources */,
 				7900FD4F299DB63F00381D8C /* Method.swift in Sources */,
 				79E5EF3729A0277800C6157B /* SegmentedSection.swift in Sources */,
 				7900FD45299D799000381D8C /* Images.swift in Sources */,
