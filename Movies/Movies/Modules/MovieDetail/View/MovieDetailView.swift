@@ -242,6 +242,8 @@ final class MovieDetailView: UIView {
         
         productionCompaniesCollectionView.isHidden = movie.productionCompanies.isEmpty
         collectionTitleLabel.isHidden = movie.productionCompanies.isEmpty
+        
+        genresButton.isHidden = movie.genres.isEmpty
     }
     
     func reload() {
