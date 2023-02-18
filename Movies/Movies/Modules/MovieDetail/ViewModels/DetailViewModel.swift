@@ -1,5 +1,5 @@
 //
-//  MovieDetailViewModel.swift
+//  DetailViewModel.swift
 //  Movies
 //
 //  Created by Ricardo Omar Hernández on 17/02/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieDetailViewModel {
+struct DetailViewModel {
     let title: String
     let imageUrl: URL?
     let category: Category
