@@ -19,5 +19,5 @@ struct DetailViewModel {
     let productionCompanies: [ProductionCompany]
     let date: String
     
-    static let empty = MovieDetailViewModel(title: "", imageUrl: URL(string: ""), category: .A, runningTime: "", laguage: .en, genres: "", score: "", numberOfVotes: "", productionCompanies: [], date: "")
+    static let empty = DetailViewModel(title: "", imageUrl: URL(string: ""), category: .A, runningTime: "", laguage: .en, genres: "", score: "", numberOfVotes: "", productionCompanies: [], date: "")
 }

@@ -224,7 +224,7 @@ final class MovieDetailView: UIView {
         return layout
     }
     
-    func setInfo(movie: MovieDetailViewModel) {
+    func setInfo(movie: DetailViewModel) {
         movieImageView.kf.setImage(
             with: movie.imageUrl,
             placeholder: UIImage(named: Images.placeholderMovieImage)

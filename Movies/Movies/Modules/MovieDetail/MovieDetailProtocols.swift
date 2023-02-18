@@ -25,12 +25,14 @@ protocol MovieDetail_PresenterToInteractorProtocol: AnyObject {
     var presenter: MovieDetail_InteractorToPresenterProtocol? { get set }
 
     func fetchMovieDetail(with id: Int)
+    func fetchTVDetail(with id: Int)
 }
 
 // MARK: INTERACTOR -> PRESENTER
 protocol MovieDetail_InteractorToPresenterProtocol: AnyObject {
     
     func didFetchMovieDetail(entity: MovieDetailResponseEntity)
+    func didFetchTVDetail(entity: TVDetailResponseEntity)
     func showError(error: Error)
 }
 
@@ -38,7 +40,7 @@ protocol MovieDetail_InteractorToPresenterProtocol: AnyObject {
 protocol MovieDetail_PresenterToViewProtocol: SpinnerDisplayable, AnyObject {
     var presenter: MovieDetail_ViewToPresenterProtocol? { get set }
     
-    func update(movieDetailViewModel: MovieDetailViewModel)
+    func update(movieDetailViewModel: DetailViewModel)
     func showErrorMessage(error: Error)
 }
 

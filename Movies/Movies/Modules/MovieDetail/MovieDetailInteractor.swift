@@ -22,5 +22,17 @@ class MovieDetailInteractor: MovieDetail_PresenterToInteractorProtocol {
             }
         }
     }
+    
+    func fetchTVDetail(with id: Int) {
+        Task {
+            let result = await RequestManager.shared.fetchTVDetail(with: id)
+            switch result {
+            case .success(let response):
+                presenter?.didFetchTVDetail(entity: response)
+            case .failure(let error):
+                presenter?.showError(error: error)
+            }
+        }
+    }
 }
 

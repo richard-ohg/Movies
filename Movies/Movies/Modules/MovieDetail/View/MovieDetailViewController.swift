@@ -36,7 +36,7 @@ extension MovieDetailViewController: MessageDisplayable {}
 
 extension MovieDetailViewController: MovieDetail_PresenterToViewProtocol {
     
-    func update(movieDetailViewModel: MovieDetailViewModel) {
+    func update(movieDetailViewModel: DetailViewModel) {
         movieDetailView.setInfo(movie: movieDetailViewModel)
     }
     

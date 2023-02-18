@@ -15,7 +15,7 @@ class MovieDetailPresenter: MovieDetail_ViewToPresenterProtocol {
     var router: MovieDetail_PresenterToRouterProtocol?
     
     let mapper: MovieDetailMapper = MovieDetailMapper()
-    private var movieDetailViewModel: MovieDetailViewModel = .empty
+    private var movieDetailViewModel: DetailViewModel = .empty
     private let movieId: Int
     
     var productionCompaniesItemsCount: Int {
@@ -32,7 +32,7 @@ class MovieDetailPresenter: MovieDetail_ViewToPresenterProtocol {
     
     func viewDidLoad() {
         view?.showSpinner()
-        interactor?.fetchMovieDetail(with: movieId)
+        interactor?.fetchTVDetail(with: movieId)
     }
 }
 
@@ -40,6 +40,14 @@ class MovieDetailPresenter: MovieDetail_ViewToPresenterProtocol {
 extension MovieDetailPresenter: MovieDetail_InteractorToPresenterProtocol {
     
     func didFetchMovieDetail(entity: MovieDetailResponseEntity) {
+        movieDetailViewModel = mapper.map(entity: entity)
+        DispatchQueue.main.async {
+            self.view?.update(movieDetailViewModel: self.movieDetailViewModel)
+            self.view?.hideSpinner()
+        }
+    }
+    
+    func didFetchTVDetail(entity: TVDetailResponseEntity) {
         movieDetailViewModel = mapper.map(entity: entity)
         DispatchQueue.main.async {
             self.view?.update(movieDetailViewModel: self.movieDetailViewModel)
