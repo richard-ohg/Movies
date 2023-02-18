@@ -94,6 +94,11 @@
 		79E5EF3929A0478F00C6157B /* GenericTVMoviesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3829A0478F00C6157B /* GenericTVMoviesEntity.swift */; };
 		79E5EF3B29A04FF600C6157B /* TVDetailResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3A29A04FF600C6157B /* TVDetailResponseEntity.swift */; };
 		79E5EF3F29A056C200C6157B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF3E29A056C200C6157B /* Environment.swift */; };
+		79E5EF4229A05FC500C6157B /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 79E5EF4129A05FC500C6157B /* SQLite */; };
+		79E5EF4429A0607700C6157B /* DataBaseManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF4329A0607700C6157B /* DataBaseManagerProtocol.swift */; };
+		79E5EF4929A060DD00C6157B /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF4829A060DD00C6157B /* DataBaseManager.swift */; };
+		79E5EF4C29A061D500C6157B /* SQLiteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF4B29A061D500C6157B /* SQLiteError.swift */; };
+		79E5EF4E29A0638D00C6157B /* DBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E5EF4D29A0638D00C6157B /* DBTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +199,10 @@
 		79E5EF3829A0478F00C6157B /* GenericTVMoviesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTVMoviesEntity.swift; sourceTree = "<group>"; };
 		79E5EF3A29A04FF600C6157B /* TVDetailResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetailResponseEntity.swift; sourceTree = "<group>"; };
 		79E5EF3E29A056C200C6157B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		79E5EF4329A0607700C6157B /* DataBaseManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManagerProtocol.swift; sourceTree = "<group>"; };
+		79E5EF4829A060DD00C6157B /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		79E5EF4B29A061D500C6157B /* SQLiteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteError.swift; sourceTree = "<group>"; };
+		79E5EF4D29A0638D00C6157B /* DBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79E5EF4229A05FC500C6157B /* SQLite in Frameworks */,
 				79DE7611299F36530069F1CC /* Kingfisher in Frameworks */,
 				7900FD55299DF32800381D8C /* FirebaseAuth in Frameworks */,
 			);
@@ -241,6 +251,7 @@
 			children = (
 				7900FD0E299D3CB900381D8C /* System */,
 				7900FD0F299D400900381D8C /* Resources */,
+				79E5EF4529A0608400C6157B /* LocalStorage */,
 				7900FD11299D401A00381D8C /* Networking */,
 				7900FD12299D403600381D8C /* Common */,
 				7900FD10299D401000381D8C /* Modules */,
@@ -255,6 +266,7 @@
 			children = (
 				7900FCF5299D390F00381D8C /* URLBuilderTests.swift */,
 				79DE75E8299EA4D20069F1CC /* ExtensionsTest.swift */,
+				79E5EF4D29A0638D00C6157B /* DBTest.swift */,
 			);
 			path = MoviesTests;
 			sourceTree = "<group>";
@@ -630,6 +642,40 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		79E5EF4529A0608400C6157B /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				79E5EF4A29A061C100C6157B /* Errors */,
+				79E5EF4629A060AA00C6157B /* Protocols */,
+				79E5EF4729A060B100C6157B /* Implementations */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		79E5EF4629A060AA00C6157B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				79E5EF4329A0607700C6157B /* DataBaseManagerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		79E5EF4729A060B100C6157B /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				79E5EF4829A060DD00C6157B /* DataBaseManager.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		79E5EF4A29A061C100C6157B /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				79E5EF4B29A061D500C6157B /* SQLiteError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -649,6 +695,7 @@
 			packageProductDependencies = (
 				7900FD54299DF32800381D8C /* FirebaseAuth */,
 				79DE7610299F36530069F1CC /* Kingfisher */,
+				79E5EF4129A05FC500C6157B /* SQLite */,
 			);
 			productName = Movies;
 			productReference = 7900FCDB299D390D00381D8C /* Movies.app */;
@@ -706,6 +753,7 @@
 			packageReferences = (
 				7900FD53299DF32700381D8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				79DE760F299F36530069F1CC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				79E5EF4029A05FC400C6157B /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = 7900FCDC299D390D00381D8C /* Products */;
 			projectDirPath = "";
@@ -752,6 +800,7 @@
 				79DE7638299F7A790069F1CC /* MovieDetailProtocols.swift in Sources */,
 				79DE7625299F5C480069F1CC /* ProfileProtocols.swift in Sources */,
 				79DE75E2299EA0170069F1CC /* SpinnerDisplayable.swift in Sources */,
+				79E5EF4429A0607700C6157B /* DataBaseManagerProtocol.swift in Sources */,
 				7900FD2E299D4E7700381D8C /* RequestManager.swift in Sources */,
 				79DE7603299EDD820069F1CC /* Reusable.swift in Sources */,
 				7900FD4D299DB5F200381D8C /* ContentMode.swift in Sources */,
@@ -765,6 +814,7 @@
 				79DE7639299F7A790069F1CC /* MovieDetailInteractor.swift in Sources */,
 				79DE7641299F8C0F0069F1CC /* MovieDetailView.swift in Sources */,
 				79DE75F7299EBED20069F1CC /* MoviesListViewController.swift in Sources */,
+				79E5EF4C29A061D500C6157B /* SQLiteError.swift in Sources */,
 				79DE762E299F716F0069F1CC /* ProfileView.swift in Sources */,
 				7900FD59299DFDDF00381D8C /* AuthenticationFirebaseServiceProtocol.swift in Sources */,
 				79E5EF3129A00A1300C6157B /* IntExtension.swift in Sources */,
@@ -805,6 +855,7 @@
 				7900FD37299D64A800381D8C /* Path.swift in Sources */,
 				7900FD24299D4C5900381D8C /* ApiError.swift in Sources */,
 				79E5EF2F29A0046E00C6157B /* ProductionCompany.swift in Sources */,
+				79E5EF4929A060DD00C6157B /* DataBaseManager.swift in Sources */,
 				79DE75FD299ED43F0069F1CC /* Colors.swift in Sources */,
 				79DE7605299EDDCA0069F1CC /* ItemMoviesListCell.swift in Sources */,
 				79DE760E299F27F60069F1CC /* DoubleExtension.swift in Sources */,
@@ -828,6 +879,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79E5EF4E29A0638D00C6157B /* DBTest.swift in Sources */,
 				7900FCF6299D390F00381D8C /* URLBuilderTests.swift in Sources */,
 				79DE75E9299EA4D20069F1CC /* ExtensionsTest.swift in Sources */,
 			);
@@ -1124,6 +1176,14 @@
 				kind = branch;
 			};
 		};
+		79E5EF4029A05FC400C6157B /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1141,6 +1201,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 79DE760F299F36530069F1CC /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		79E5EF4129A05FC500C6157B /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79E5EF4029A05FC400C6157B /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
