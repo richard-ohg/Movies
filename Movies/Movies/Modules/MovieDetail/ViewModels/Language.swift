@@ -11,6 +11,7 @@ enum Language: String {
     case es
     case en
     case fr
+    case hi
     case unknown
     
     func getLanguage() -> String {
@@ -21,6 +22,8 @@ enum Language: String {
             return "ENG"
         case .fr:
             return "FRA"
+        case .hi:
+            return "IND"
         case .unknown:
             return "IDK"
         }
