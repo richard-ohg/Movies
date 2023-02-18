@@ -65,6 +65,17 @@ class RequestManager {
         }
     }
     
+    func fetchAiringMovies(withPage page: Int = 1) async -> Result<GenericMovieResponseEntity<GenericTVMoviesEntity>, Error> {
+        do {
+            var builder = URLBuilder()
+            builder.config(path: .airing, queryParams: ["page" : page])
+            let apiClientResult = try await apiClient.request(url: builder.getUrl(), type: GenericMovieResponseEntity<GenericTVMoviesEntity>.self)
+            return .success(apiClientResult)
+        } catch {
+            return .failure(error)
+        }
+    }
+    
     func fetchMovieDetail(with id: Int) async -> Result<MovieDetailResponseEntity, Error> {
         do {
             var builder = URLBuilder()

@@ -14,6 +14,7 @@ enum Path {
     case movieDetail(Int)
     case topRated
     case onTV
+    case airing
     
     func getString() -> String {
         switch self {
@@ -29,6 +30,8 @@ enum Path {
             return "/3/movie/top_rated"
         case .onTV:
             return "/3/tv/on_the_air"
+        case .airing:
+            return "/3/tv/airing_today"
         }
     }
 }
